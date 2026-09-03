@@ -23,6 +23,7 @@ public class RailCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // tem que criar o objeto da rail e seu filhos que são os waypoints
         Vector3 railAlvo = nodes[nodesNumero];
         Vector3 posicaoAtual = camera.transform.position;
 
