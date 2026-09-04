@@ -6,6 +6,8 @@ public class VidaController : MonoBehaviour
 
     [SerializeField] private int vidaAtual, maxVida;
     [SerializeField] private bool morto = false;
+    [SerializeField] private bool destruirAoMorrer = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     /*public void VidaIniciada(int vidaValue)
@@ -19,16 +21,22 @@ public class VidaController : MonoBehaviour
     public void ReceberDano(int dano)
     {
         if (morto) return;
- 
 
         vidaAtual -= dano;
 
+        Debug.Log($"{gameObject.name} recebeu {dano} de dano. Vida atual: {vidaAtual}/{maxVida}");
+
         if (vidaAtual <= 0)
         {
+            vidaAtual = 0;
             morto = true;
-            Destroy(gameObject);
+
+            Debug.Log($"{gameObject.name} morreu!");
+
+            if (destruirAoMorrer) { Destroy(gameObject); }
+
         }
-        
+
 
     }
 }
