@@ -3,23 +3,23 @@ using UnityEngine;
 
 public class SpawnerController : MonoBehaviour
 {
-    public Vector3[] nodes;
-    private int nodeCount;
+    private Vector3[] wayPoints;
+    private int wayPointsCount;
 
     public List<GameObject> inimigos = new List<GameObject>();
     [SerializeField] private GameObject meuEnyme;
     [SerializeField] private GameObject meuCamera;
-    [SerializeField]  private RailCamera railCamera;
+    [SerializeField] private RailCamera railCamera;
     //[SerializeField] private GameObject wayPointSpaw;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         railCamera = FindAnyObjectByType<RailCamera>();
-        nodeCount = transform.childCount;
-        nodes = new Vector3[nodeCount];
-        for (int i = 0; i < nodeCount; i++)
+        wayPointsCount = transform.childCount;
+        wayPoints = new Vector3[wayPointsCount];
+        for (int i = 0; i < wayPointsCount; i++)
         {
-            nodes[i] = transform.GetChild(i).position;
+            wayPoints[i] = transform.GetChild(i).position;
         }
     }
 
@@ -27,8 +27,7 @@ public class SpawnerController : MonoBehaviour
     void Update()
     {
 
-
-        if (railCamera.nodesNumero == 1)
+        if (railCamera.nodesNumero == 0)
         {
             if (Vector3.Distance(meuCamera.transform.position, railCamera.nodes[railCamera.nodesNumero]) < 0.1f)
             {
@@ -50,8 +49,8 @@ public class SpawnerController : MonoBehaviour
     // Aqui ele vai instanciar o inimigo no ponto do waypoint que vc escolher a partidir do numero colocado, e adicionar na lista de inimigos
     void SpawnEnemy(int nodeIndex)
     {
-        Instantiate(meuEnyme, nodes[nodeIndex], Quaternion.identity);
-        inimigos.Add(meuEnyme);
+        GameObject enemy = Instantiate(meuEnyme, wayPoints[nodeIndex], Quaternion.identity);
+        inimigos.Add(enemy);
     }
-
+    
 }

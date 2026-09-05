@@ -13,6 +13,7 @@ public class PlayerAim : MonoBehaviour
     void Awake()
     {
         playerAmmo = GetComponent<PlayerAmmo>();
+        playerCamera = FindAnyObjectByType<Camera>();
         Debug.Log("[PlayerAim] PlayerAmmo encontrado: " + playerAmmo);
     }
 
