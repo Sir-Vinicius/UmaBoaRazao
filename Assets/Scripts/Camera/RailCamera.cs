@@ -4,7 +4,7 @@ public class RailCamera : MonoBehaviour
 {
     private Vector3[] nodes;
     private int nodeCount;
-    [SerializeField] private GameObject camera;
+    [SerializeField] private new GameObject camera;
     [SerializeField] private int nodesNumero;
     [SerializeField] private float vel = 2f;
     [SerializeField] private float velOlhar = 2f;
