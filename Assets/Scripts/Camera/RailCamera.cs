@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class RailCamera : MonoBehaviour
 {
-    private Vector3[] nodes;
+    public Vector3[] nodes;
     private int nodeCount;
     [SerializeField] private new GameObject camera;
-    [SerializeField] private int nodesNumero;
+    [SerializeField] public int nodesNumero;
     [SerializeField] private float vel = 2f;
     [SerializeField] private float velOlhar = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
