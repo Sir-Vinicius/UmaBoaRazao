@@ -7,6 +7,15 @@ public class PlayerAim : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float shootDistance = 100f;
     [SerializeField] private int dano = 1;
+    
+    private PlayerAmmo playerAmmo;
+
+    void Awake()
+    {
+        playerAmmo = GetComponent<PlayerAmmo>();
+        Debug.Log("[PlayerAim] PlayerAmmo encontrado: " + playerAmmo);
+    }
+
     void Start()
     {
         
@@ -26,6 +35,15 @@ public class PlayerAim : MonoBehaviour
 
     private void Atirar()
     {
+
+        if (!playerAmmo.TemMunicao())
+        {
+            Debug.Log("[Ammo] Sem munição!");
+            return;
+        }
+
+        playerAmmo.GastarMunicao();
+        
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = playerCamera.ScreenPointToRay(mousePosition);
 
