@@ -7,11 +7,13 @@ public class EnemyAttack : MonoBehaviour
 
     private float proximoAtaque;
     private VidaController vidaPlayer;
+    private CoverController coverController;
 
     void Start()
     {
         GameObject player = GameObject.Find("Player");
         vidaPlayer = player.GetComponent<VidaController>();
+        coverController = player.GetComponent<CoverController>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,14 @@ public class EnemyAttack : MonoBehaviour
 
     private void Atacar()
     {
-        Debug.Log("Inimigo atacou!");
-        vidaPlayer.ReceberDano(dano);
+        if (coverController.isInCover == false)
+        {
+            Debug.Log("Inimigo atacou!");
+            vidaPlayer.ReceberDano(dano);
+        }
+        else
+        {
+            Debug.Log("Bloqueado");
+        }
     }
 }
