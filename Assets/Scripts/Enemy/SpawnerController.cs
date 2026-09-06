@@ -34,14 +34,7 @@ public class SpawnerController : MonoBehaviour
                 if (inimigos.Count <= 0)
                 {
                     SpawnEnemy(0);
-                    SpawnEnemy(1);
-
-
-
-
                 }
-
-
             }
         }
 
