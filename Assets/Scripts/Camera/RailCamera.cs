@@ -19,6 +19,20 @@ public class RailCamera : MonoBehaviour
         {
             nodes[i] = transform.GetChild(i).position;
         }
+
+
+        //SISTEMA DE SAVE
+        /*
+        
+        nodesNumero = PlayerPrefs.GetInt("checkpointNode", 0);
+        
+        if (nodesNumero < nodeCount)
+        {
+            camera.transform.position = nodes[nodesNumero];
+        }
+
+        */
+         
     }
 
     // Update is called once per frame
@@ -50,6 +64,19 @@ public class RailCamera : MonoBehaviour
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
         }
+
+        //SISTEMA DE SAVE
+        /*
+        
+        else
+        {
+            nodesNumero++; //Pula para o próximo alvo
+
+            PlayerPrefs.SetInt("CheckpointNode", nodesNumero); //salva o novo alvo 
+            PlayerPrefs.Save();
+        }
+
+        */
     }
 }
 
