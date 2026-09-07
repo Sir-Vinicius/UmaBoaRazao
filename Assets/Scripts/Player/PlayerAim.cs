@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,8 @@ public class PlayerAim : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float shootDistance = 100f;
     [SerializeField] private int dano = 1;
-    
+    [SerializeField] private EventReference shootSound;
+
     private PlayerAmmo playerAmmo;
 
     void Awake()
@@ -61,5 +63,8 @@ public class PlayerAim : MonoBehaviour
                 vida.ReceberDano(dano);
             }
         }
+
+        RuntimeManager.PlayOneShot(shootSound, transform.position);
+
     }
 }
