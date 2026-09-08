@@ -26,6 +26,7 @@ public class PlayerAim : MonoBehaviour
 
     void Update()
     {
+        Cursor.visible = false;
         Vector2 mousePosition = Mouse.current.position.ReadValue();
 
         crosshair.position = mousePosition;
