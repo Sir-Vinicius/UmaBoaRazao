@@ -98,5 +98,5 @@ public class SpawnerController : MonoBehaviour
             intervaloSpawn -= Time.deltaTime;
         }
     }
-
+    
 }
