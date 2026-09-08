@@ -6,6 +6,10 @@ public class SpawnerController : MonoBehaviour
     private Vector3[] wayPoints;
     private int wayPointsCount;
 
+    private bool evento = false;
+    private bool horda = false;
+    private float intervaloSpawn = 2f;
+
     public List<GameObject> inimigos = new List<GameObject>();
     [SerializeField] private GameObject meuEnyme;
     [SerializeField] private GameObject meuCamera;
@@ -26,16 +30,49 @@ public class SpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ProximoEvento();
+        IntervaloHorda();
 
-        if (railCamera.nodesNumero == 0)
+        switch (railCamera.nodesNumero)
         {
-            if (Vector3.Distance(meuCamera.transform.position, railCamera.nodes[railCamera.nodesNumero]) < 0.1f)
-            {
-                if (inimigos.Count <= 0)
+            case 0:
+                if (Vector3.Distance(meuCamera.transform.position, railCamera.nodes[railCamera.nodesNumero]) < 0.1f)
                 {
-                    SpawnEnemy(0);
+                    if (inimigos.Count <= 0)
+                    {
+                        SpawnEnemy(0);
+                        SpawnEnemy(1);
+                        evento = true;
+                    }
                 }
-            }
+                break;
+            case 1:
+                if (Vector3.Distance(meuCamera.transform.position, railCamera.nodes[railCamera.nodesNumero]) < 0.1f)
+                {
+                    if (inimigos.Count <= 0)
+                    {
+                        if(evento == false)
+                        {
+                            SpawnEnemy(2);
+                            SpawnEnemy(3);
+                            evento = true;
+                            horda = true;
+                            intervaloSpawn = 2f;
+                        }
+
+                        if (horda && inimigos.Count <= 0 && intervaloSpawn <= 0f)
+                        {
+                            SpawnEnemy(2);
+                            SpawnEnemy(3);
+                            SpawnEnemy(4);
+                            horda = false;
+                            
+                        }
+                    }
+                }
+                // Handle case 1
+                break;
+            // Add more cases as needed
         }
 
     }
@@ -45,5 +82,21 @@ public class SpawnerController : MonoBehaviour
         GameObject enemy = Instantiate(meuEnyme, wayPoints[nodeIndex], Quaternion.identity);
         inimigos.Add(enemy);
     }
-    
+
+    private void ProximoEvento()
+    {
+        if (evento && inimigos.Count <= 0 && horda == false)
+        {
+            railCamera.nodesNumero++;
+            evento = false;
+        }
+    }
+    private void IntervaloHorda()
+    {
+        if (inimigos.Count <= 0f && horda)
+        {
+            intervaloSpawn -= Time.deltaTime;
+        }
+    }
+
 }
