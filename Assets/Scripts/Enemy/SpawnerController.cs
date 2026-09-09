@@ -80,6 +80,7 @@ public class SpawnerController : MonoBehaviour
     void SpawnEnemy(int nodeIndex, float alvo, bool voltando)
     {
         GameObject enemy = Instantiate(meuEnemy, wayPoints[nodeIndex], Quaternion.identity);
+        Enemy enemyScript = enemy.GetComponent<Enemy>();
         inimigos.Add(enemy);
         enemyScript.pontoX = alvo;
         enemyScript.voltandoEnemy = voltando;
