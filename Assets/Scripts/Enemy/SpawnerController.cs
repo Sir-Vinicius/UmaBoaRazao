@@ -11,7 +11,7 @@ public class SpawnerController : MonoBehaviour
     private float intervaloSpawn = 2f;
 
     public List<GameObject> inimigos = new List<GameObject>();
-    [SerializeField] private GameObject meuEnyme;
+    [SerializeField] private GameObject meuEnemy;
     [SerializeField] private GameObject meuCamera;
     [SerializeField] private RailCamera railCamera;
     //[SerializeField] private GameObject wayPointSpaw;
@@ -79,7 +79,7 @@ public class SpawnerController : MonoBehaviour
     // Aqui ele vai instanciar o inimigo no ponto do waypoint que vc escolher a partidir do numero colocado, e adicionar na lista de inimigos
     void SpawnEnemy(int nodeIndex)
     {
-        GameObject enemy = Instantiate(meuEnyme, wayPoints[nodeIndex], Quaternion.identity);
+        GameObject enemy = Instantiate(meuEnemy, wayPoints[nodeIndex], Quaternion.identity);
         inimigos.Add(enemy);
     }
 
