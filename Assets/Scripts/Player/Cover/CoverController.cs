@@ -30,7 +30,23 @@ public class CoverController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        posicaoOriginal = coverPai.coversOriginal[railCamera.nodesNumero];
+        // checagens básicas para evitar IndexOutOfRange / NullReference
+        if (coverPai == null || pontoCoverPai == null || railCamera == null)
+        {
+            return;
+        }
+
+        int idx = railCamera.nodesNumero;
+        if (idx < 0)
+        {
+            return;
+        }
+
+        if (coverPai.coversOriginal != null && idx < coverPai.coversOriginal.Length)
+        {
+            posicaoOriginal = coverPai.coversOriginal[idx];
+        }
+
         Cover();
     }
 
@@ -38,13 +54,26 @@ public class CoverController : MonoBehaviour
     {
         
 
-        var posicaoAtual = coverPai.coversG[railCamera.nodesNumero].transform.position;
-        Vector3 posicaoPonto = pontoCoverPai.pontosG[railCamera.nodesNumero].transform.position;
+        int idx = railCamera.nodesNumero;
+
+        // validações de segurança
+        if (coverPai.coversG == null || pontoCoverPai.pontosG == null)
+        {
+            return;
+        }
+        if (idx >= coverPai.coversG.Length || idx >= pontoCoverPai.pontosG.Length)
+        {
+            return;
+        }
+        if (coverPai.coversG[idx] == null || pontoCoverPai.pontosG[idx] == null)
+        {
+            return;
+        }
+
+        var posicaoAtual = coverPai.coversG[idx].transform.position;
+        Vector3 posicaoPonto = pontoCoverPai.pontosG[idx].transform.position;
         var direcao = (posicaoPonto - posicaoAtual).normalized;
         var direcaoOriginal = (posicaoOriginal - posicaoAtual).normalized;
-
-        Debug.Log(posicaoAtual);
-        Debug.Log(posicaoPonto);
 
 
 
@@ -52,7 +81,7 @@ public class CoverController : MonoBehaviour
 
         bool segurando = Keyboard.current.spaceKey.isPressed;
 
-        if (segurando)
+        if (segurando && coverPai.coversG[railCamera.nodesNumero] != null)
         {
             // Debug.Log("Player is taking cover!");
             isInCover = true;
