@@ -39,4 +39,14 @@ public class VidaController : MonoBehaviour
 
 
     }
+    public void Curar(int cura)
+    {
+        if (morto) return;
+        if (vidaAtual >= maxVida) return;
+       
+        vidaAtual += cura;
+        
+        
+        Debug.Log($"{gameObject.name} foi curado em {cura}. Vida atual: {vidaAtual}/{maxVida}");
+    }
 }
