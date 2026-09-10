@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RailCamera : MonoBehaviour
@@ -8,6 +9,8 @@ public class RailCamera : MonoBehaviour
     [SerializeField] public int nodesNumero;
     [SerializeField] private float vel = 2f;
     [SerializeField] private float velOlhar = 2f;
+    [SerializeField] private float direcaoY;
+    [SerializeField] private bool rotacionarCamera = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,12 +60,18 @@ public class RailCamera : MonoBehaviour
         var visaoAtual = camera.transform.rotation;
 
         Vector3 direcao = (railAlvo - posicaoAtual).normalized;
+        Vector3 diracaoCamera = (new Vector3(posicaoAtual.x, direcaoY, posicaoAtual.z) - posicaoAtual).normalized;
         Quaternion direcaoOlhar = Quaternion.LookRotation(direcao);
+        Quaternion direcaoOlharCerta = Quaternion.LookRotation(diracaoCamera);
 
         if (Vector3.Distance(posicaoAtual, railAlvo) > 0.1f)
         {
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
+        }
+        if(Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f && rotacionarCamera)
+        {
+            camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlharCerta, velOlhar * Time.deltaTime);
         }
 
         //SISTEMA DE SAVE
