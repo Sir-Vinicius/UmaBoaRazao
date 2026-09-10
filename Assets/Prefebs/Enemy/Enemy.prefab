@@ -129,10 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   posicaoOriginal: {x: 0, y: 0, z: 0}
-  pontoX: 0
+  ponto: 0
+  pontoXYZ: 0
   pontoAlvo: {x: 0, y: 0, z: 0}
   vel: 2
   meuBox: {fileID: 0}
+  meuAnimation: {fileID: 0}
   indoParaAlvo: 1
   voltandoEnemy: 0
 --- !u!114 &2140410338015667803
@@ -177,6 +179,7 @@ GameObject:
   - component: {fileID: 4840121463385615507}
   - component: {fileID: 2400858365338164299}
   - component: {fileID: 1815840498478345617}
+  - component: {fileID: 7369052629606184229}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -253,7 +256,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.98, y: 1.465}
+  m_Size: {x: 1.3066666, y: 1.9533334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -270,3 +273,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6f41c27ed884d47868d7b314a2d95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Billboard
+--- !u!95 &7369052629606184229
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185571780042967271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21dff5a6ef6f46148b3c82bef498e130, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

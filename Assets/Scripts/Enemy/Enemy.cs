@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private float intervalo;
 
     public BoxCollider meuBox;
+    public Animator meuAnimation;
     private float tempoEspera;
 
     public bool indoParaAlvo = true;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         meuBox = GetComponent<BoxCollider>();
+        meuAnimation = GetComponentInChildren<Animator>();
         listaEnemy = FindAnyObjectByType<SpawnerController>();
 
         posicaoOriginal = transform.position;
