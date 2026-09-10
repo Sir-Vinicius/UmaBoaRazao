@@ -40,8 +40,11 @@ public class SpawnerController : MonoBehaviour
                 {
                     if (inimigos.Count <= 0)
                     {
-                        SpawnEnemy(0, -1f, true);
-                        SpawnEnemy(1, 1.5f, true);
+                        SpawnEnemy(0, 1.8f, true, 1);
+                        SpawnEnemy(1, -5.2f, true, 1);
+                        SpawnEnemy(2, 5.5f, true, 1);
+                        SpawnEnemy(3, 2f, true, 1);
+                        SpawnEnemy(4, 1.4f, true, 1);
                         evento = true;
                     }
                 }   
@@ -53,8 +56,11 @@ public class SpawnerController : MonoBehaviour
                     {
                         if(evento == false)
                         {
-                            //SpawnEnemy(2, -1f);
-                            //SpawnEnemy(3, 0f);
+                            
+                            SpawnEnemy(5, 12.5f, true, 3);
+                            SpawnEnemy(6, 11.3f, true, 3);
+                            SpawnEnemy(8, 16f, false, 3);
+                            SpawnEnemy(9, 15f, false, 3);
                             evento = true;
                             horda = true;
                             intervaloSpawn = 2f;
@@ -62,9 +68,13 @@ public class SpawnerController : MonoBehaviour
 
                         if (horda && inimigos.Count <= 0 && intervaloSpawn <= 0f)
                         {
-                           // SpawnEnemy(2, 0f);
-                           // SpawnEnemy(3, 0f);
-                           // SpawnEnemy(4, 0f);
+                            SpawnEnemy(5, 12.5f, true, 3);
+                            SpawnEnemy(6, 11.3f, true, 3);
+                            SpawnEnemy(7, 13.5f, true, 3);
+                            SpawnEnemy(8, 16f, false, 3);
+                            SpawnEnemy(9, 15f, false, 3);
+                            SpawnEnemy(10, 12.5f, true, 3);
+                            SpawnEnemy(11, 19.3f, true, 3);
                             horda = false;
                             
                         }
@@ -77,12 +87,13 @@ public class SpawnerController : MonoBehaviour
 
     }
     // Aqui ele vai instanciar o inimigo no ponto do waypoint que vc escolher a partidir do numero colocado, e adicionar na lista de inimigos
-    void SpawnEnemy(int nodeIndex, float alvo, bool voltando)
+    void SpawnEnemy(int nodeIndex, float alvo, bool voltando, int XYZ)
     {
         GameObject enemy = Instantiate(meuEnemy, wayPoints[nodeIndex], Quaternion.identity);
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         inimigos.Add(enemy);
-        enemyScript.pontoX = alvo;
+        enemyScript.pontoXYZ = XYZ;
+        enemyScript.ponto = alvo;        
         enemyScript.voltandoEnemy = voltando;
     }
 

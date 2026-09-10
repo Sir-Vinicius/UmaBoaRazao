@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: c2929042e4463be478251e74cd6dc24e
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: bb73dd34df4fb5b4a9eb4fcf155d7da9
+  - enabled: 1
+    path: Assets/Scenes/CordelCutscene1.unity
+    guid: 5a912d243bc0a9e4ea2d01c365b76328
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
