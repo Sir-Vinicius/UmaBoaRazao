@@ -8,7 +8,9 @@ public class PlayerAim : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float shootDistance = 100f;
     [SerializeField] private int dano = 1;
+
     [SerializeField] private EventReference shootSound;
+    [SerializeField] private EventReference ammoSound;
 
     private PlayerAmmo playerAmmo;
 
@@ -27,8 +29,8 @@ public class PlayerAim : MonoBehaviour
     void Update()
     {
         Cursor.visible = false;
-        Vector2 mousePosition = Mouse.current.position.ReadValue();
 
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
         crosshair.position = mousePosition;
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -42,12 +44,15 @@ public class PlayerAim : MonoBehaviour
 
         if (!playerAmmo.TemMunicao())
         {
+            RuntimeManager.PlayOneShot(ammoSound);
             Debug.Log("[Ammo] Sem munição!");
             return;
         }
 
         playerAmmo.GastarMunicao();
-        
+
+        RuntimeManager.PlayOneShot(shootSound);
+
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = playerCamera.ScreenPointToRay(mousePosition);
 
@@ -64,8 +69,5 @@ public class PlayerAim : MonoBehaviour
                 vida.ReceberDano(dano);
             }
         }
-
-        RuntimeManager.PlayOneShot(shootSound, transform.position);
-
     }
 }

@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,8 @@ public class PlayerAmmo : MonoBehaviour
     [SerializeField] private int capacidadeCarregador = 6;
     [SerializeField] private int municaoAtual = 6;
     [SerializeField] private int municaoReserva = 999999;
+
+    [SerializeField] private EventReference reloadSound;
     void Start()
     {
         
@@ -58,6 +61,8 @@ public class PlayerAmmo : MonoBehaviour
 
         municaoAtual += quantidadeRecarregada;
         municaoReserva -= quantidadeRecarregada;
+
+        RuntimeManager.PlayOneShot(reloadSound);
 
         Debug.Log(
             "[Ammo] Recarregou: " +

@@ -1,9 +1,12 @@
+using FMODUnity;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private int dano = 2;
     [SerializeField] private float intervaloAtaque;
+
+    [SerializeField] private EventReference enemyShootSound;
 
     private float proximoAtaque;
     private VidaController vidaPlayer;
@@ -46,6 +49,8 @@ public class EnemyAttack : MonoBehaviour
 
     private void Atacar()
     {
+        RuntimeManager.PlayOneShot(enemyShootSound, transform.position);
+
         if (coverController.isInCover == false)
         {
             Debug.Log("Inimigo atacou!");
