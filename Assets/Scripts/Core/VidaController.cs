@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Events;
+using FMODUnity;
 
 public class VidaController : MonoBehaviour
 {
@@ -7,6 +7,9 @@ public class VidaController : MonoBehaviour
     [SerializeField] private int vidaAtual, maxVida;
     [SerializeField] private bool morto = false;
     [SerializeField] private bool destruirAoMorrer = true;
+
+    [SerializeField] private EventReference damageSound;
+    [SerializeField] private EventReference deathSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -33,11 +36,14 @@ public class VidaController : MonoBehaviour
 
             Debug.Log($"{gameObject.name} morreu!");
 
+            RuntimeManager.PlayOneShot(deathSound, transform.position);
+
             if (destruirAoMorrer) { Destroy(gameObject); }
 
+            return;
         }
 
-
+        RuntimeManager.PlayOneShot(damageSound, transform.position);
     }
     public void Curar(int cura)
     {
