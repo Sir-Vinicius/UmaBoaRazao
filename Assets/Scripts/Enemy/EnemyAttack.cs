@@ -32,6 +32,7 @@ public class EnemyAttack : MonoBehaviour
         {
             if (arrivedAtTarget)
             {
+                enemy.meuAnimation.SetBool("Atirando", true);
                 intervaloAtaque = Random.Range(1f, 3f);
                 proximoAtaque = Time.time + intervaloAtaque;
                 arrivedAtTarget = false;
@@ -60,5 +61,6 @@ public class EnemyAttack : MonoBehaviour
         {
             Debug.Log("Bloqueado");
         }
+        enemy.meuAnimation.SetBool("Atirando", false);
     }
 }
