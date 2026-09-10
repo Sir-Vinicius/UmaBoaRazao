@@ -114,8 +114,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9323988, y: 2, z: 0.33402252}
+  m_Center: {x: -0.033800602, y: 0, z: -0.0923233}
 --- !u!114 &7670972591291816101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9b7a4553faea94fbf867bfaa771a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  posicaoOriginal: {x: 0, y: 0, z: 0}
+  pontoX: 0
+  pontoAlvo: {x: 0, y: 0, z: 0}
+  vel: 2
   meuBox: {fileID: 0}
+  indoParaAlvo: 1
+  voltandoEnemy: 0
 --- !u!114 &2140410338015667803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   dano: 2
   intervaloAtaque: 2
+  arrivedAtTarget: 1
 --- !u!114 &-7457407520474249016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +253,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.84, y: 11.72}
+  m_Size: {x: 0.98, y: 1.465}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -5,14 +5,16 @@ public class Enemy : MonoBehaviour
 {
     private SpawnerController listaEnemy;
 
-    [SerializeField] private Vector3 posicaoOriginal;
-    public float pontoX;
-        
+    [SerializeField] public Vector3 posicaoOriginal;
+    public float ponto;
+    public int pontoXYZ;
+
     public Vector3 pontoAlvo;
     [SerializeField] private float vel = 2f;
     private float intervalo;
 
     public BoxCollider meuBox;
+    private float tempoEspera;
 
     public bool indoParaAlvo = true;
     public bool voltandoEnemy;
@@ -23,16 +25,31 @@ public class Enemy : MonoBehaviour
         listaEnemy = FindAnyObjectByType<SpawnerController>();
 
         posicaoOriginal = transform.position;
+        tempoEspera = Time.time + Random.Range(1f, 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        pontoAlvo = new Vector3(pontoX, posicaoOriginal.y, posicaoOriginal.z);
-
-        if (indoParaAlvo)
+        switch (pontoXYZ)
         {
-            PrepararAtirar();
+            case 1:
+                pontoAlvo = new Vector3(ponto, posicaoOriginal.y, posicaoOriginal.z);
+                break;
+            case 2:
+                pontoAlvo = new Vector3(posicaoOriginal.x, ponto, posicaoOriginal.z);  
+                break;
+            case 3:
+                pontoAlvo = new Vector3(posicaoOriginal.x, posicaoOriginal.y, ponto);
+                break;
+        }
+
+        if (Time.time > tempoEspera)
+        {
+            if (indoParaAlvo)
+            {
+                PrepararAtirar();
+            }
         }
 
         if (!indoParaAlvo && voltandoEnemy)
