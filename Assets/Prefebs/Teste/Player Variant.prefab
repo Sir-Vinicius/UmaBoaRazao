@@ -56,6 +56,114 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: ammoSound.Path
+      value: event:/ammo_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: shootSound.Path
+      value: event:/shoot_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: ammoSound.Guid.Data1
+      value: -261387539
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: ammoSound.Guid.Data2
+      value: 1175605717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: ammoSound.Guid.Data3
+      value: 834425996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: ammoSound.Guid.Data4
+      value: -1484315060
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: shootSound.Guid.Data1
+      value: 1114474377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: shootSound.Guid.Data2
+      value: 1108417618
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: shootSound.Guid.Data3
+      value: -456523351
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528118700875579077, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: shootSound.Guid.Data4
+      value: 1109158547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: maxVida
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: vidaAtual
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: deathSound.Path
+      value: event:/death_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: damageSound.Path
+      value: event:/damage_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: deathSound.Guid.Data1
+      value: 1917428490
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: deathSound.Guid.Data2
+      value: 1110229397
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: deathSound.Guid.Data3
+      value: -1098031210
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: deathSound.Guid.Data4
+      value: 247139272
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: damageSound.Guid.Data1
+      value: -1696455421
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: damageSound.Guid.Data2
+      value: 1159804989
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: damageSound.Guid.Data3
+      value: -99907153
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: damageSound.Guid.Data4
+      value: 1491075638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703835177474892253, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: reloadSound.Path
+      value: event:/reload_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703835177474892253, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: reloadSound.Guid.Data1
+      value: 886192017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703835177474892253, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: reloadSound.Guid.Data2
+      value: 1339649648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703835177474892253, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: reloadSound.Guid.Data3
+      value: -1118536571
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703835177474892253, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: reloadSound.Guid.Data4
+      value: 1939973569
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,4 +192,4 @@ MonoBehaviour:
   posicaoOriginal: {x: 0, y: 0, z: 0}
   coverObject: {fileID: 0}
   isInCover: 0
-  alvoPitch: 18
+  alvoPitch: 20

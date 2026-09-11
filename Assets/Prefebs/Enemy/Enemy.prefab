@@ -158,13 +158,6 @@ MonoBehaviour:
       Data3: -1987440970
       Data4: 1463375189
     Path: event:/enemyshoot_sfx
-  flybySound:
-    Guid:
-      Data1: 1490525951
-      Data2: 1121215231
-      Data3: -1163792239
-      Data4: -605489342
-    Path: event:/flyby_sfx
   arrivedAtTarget: 1
 --- !u!114 &-7457407520474249016
 MonoBehaviour:
@@ -178,17 +171,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2172cd1f68daa6449906cc410e80e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VidaController
-  vidaAtual: 2
+  vidaAtual: 1
   maxVida: 0
   morto: 0
   destruirAoMorrer: 1
   damageSound:
     Guid:
-      Data1: -1696455421
-      Data2: 1159804989
-      Data3: -99907153
-      Data4: 1491075638
-    Path: event:/damage_sfx
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   deathSound:
     Guid:
       Data1: 1539820666
