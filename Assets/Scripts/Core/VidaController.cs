@@ -27,6 +27,13 @@ public class VidaController : MonoBehaviour
 
         vidaAtual -= dano;
 
+        if (gameObject.CompareTag("Player"))
+        {
+            HUDManager.Instancia.AtualizarVida(vidaAtual);
+
+        }
+
+
         Debug.Log($"{gameObject.name} recebeu {dano} de dano. Vida atual: {vidaAtual}/{maxVida}");
 
         if (vidaAtual <= 0)

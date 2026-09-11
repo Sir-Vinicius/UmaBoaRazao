@@ -15,7 +15,7 @@ public class CutSceneManager : MonoBehaviour
         yield return new WaitForSeconds(fading.fadeDuration);
         yield return new WaitForSeconds(readTime);
         fading.FadeOut();
-        fading.FadeOutCardFocus();
+        fading.FadeOutFocus();
         yield return new WaitForSeconds(fading.fadeDuration);
         //adicionar um if para cada cutscene
         SceneManager.LoadScene("MainMenu");
