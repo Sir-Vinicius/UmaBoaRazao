@@ -151,6 +151,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   dano: 2
   intervaloAtaque: 2
+  enemyShootSound:
+    Guid:
+      Data1: 2019616614
+      Data2: 1259814614
+      Data3: -1987440970
+      Data4: 1463375189
+    Path: event:/enemyshoot_sfx
   arrivedAtTarget: 1
 --- !u!114 &-7457407520474249016
 MonoBehaviour:
@@ -164,10 +171,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2172cd1f68daa6449906cc410e80e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VidaController
-  vidaAtual: 2
+  vidaAtual: 1
   maxVida: 0
   morto: 0
   destruirAoMorrer: 1
+  damageSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  deathSound:
+    Guid:
+      Data1: 1539820666
+      Data2: 1232490033
+      Data3: 1891054012
+      Data4: 445270481
+    Path: event:/enemydeath_sfx
 --- !u!1 &1185571780042967271
 GameObject:
   m_ObjectHideFlags: 0

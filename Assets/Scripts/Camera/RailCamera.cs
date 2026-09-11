@@ -7,10 +7,10 @@ public class RailCamera : MonoBehaviour
     private int nodeCount;
     [SerializeField] private new GameObject camera;
     [SerializeField] public int nodesNumero;
-    [SerializeField] private float vel = 2f;
+    [SerializeField] public float vel = 2f;
     [SerializeField] private float velOlhar = 2f;
     [SerializeField] private float direcaoY;
-    [SerializeField] private bool rotacionarCamera = false;
+    [SerializeField] public bool rotacionarCamera = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -60,7 +60,7 @@ public class RailCamera : MonoBehaviour
         var visaoAtual = camera.transform.rotation;
 
         Vector3 direcao = (railAlvo - posicaoAtual).normalized;
-        Vector3 diracaoCamera = (new Vector3(posicaoAtual.x, direcaoY, posicaoAtual.z) - posicaoAtual).normalized;
+        Vector3 diracaoCamera = (new Vector3(posicaoAtual.x, nodes[nodesNumero].y, posicaoAtual.z) - posicaoAtual).normalized;
         Quaternion direcaoOlhar = Quaternion.LookRotation(direcao);
         Quaternion direcaoOlharCerta = Quaternion.LookRotation(diracaoCamera);
 

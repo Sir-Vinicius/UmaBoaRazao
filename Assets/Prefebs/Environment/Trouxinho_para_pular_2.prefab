@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 806936329247086183}
   - component: {fileID: 7108575457967280672}
   - component: {fileID: 5377008537332026780}
+  - component: {fileID: 1851783435271343964}
+  - component: {fileID: 3306766481545184927}
   m_Layer: 0
   m_Name: Trouxinho_para_pular_2
   m_TagString: Untagged
@@ -104,3 +106,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6f41c27ed884d47868d7b314a2d95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Billboard
+--- !u!65 &1851783435271343964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712842570964018518}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.6, y: 0.25, z: 0}
+  m_Center: {x: 0, y: 1.23, z: 0}
+--- !u!65 &3306766481545184927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712842570964018518}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.62, y: 0.29, z: 0}
+  m_Center: {x: 0, y: 0.68, z: 0}
