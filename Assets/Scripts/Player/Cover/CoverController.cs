@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,11 @@ public class CoverController : MonoBehaviour
     private GameObject meuCamera;
     private Vector3 eulerOriginal;
     private float currentPitch;
+
+    //Som
+    [SerializeField] private EventReference hideSound;
+    [SerializeField] private EventReference outSound;
+
     [SerializeField] private float alvoPitch = 18f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -84,6 +90,10 @@ public class CoverController : MonoBehaviour
         if (segurando && coverPai.coversG[railCamera.nodesNumero] != null)
         {
             // Debug.Log("Player is taking cover!");
+            if (!isInCover)
+            {
+                RuntimeManager.PlayOneShot(hideSound);
+            }
             isInCover = true;
             if (Vector3.Distance(posicaoAtual, posicaoPonto) > 0.01f)
             {
@@ -96,6 +106,10 @@ public class CoverController : MonoBehaviour
         }
         else
         {
+            if (isInCover)
+            {
+                RuntimeManager.PlayOneShot(outSound);
+            }
             isInCover = false;
             if (Vector3.Distance(posicaoAtual, posicaoOriginal) > 0.01f)
             {
@@ -104,9 +118,5 @@ public class CoverController : MonoBehaviour
                 meuCamera.transform.rotation = Quaternion.Euler(currentPitch, meuCamera.transform.rotation.eulerAngles.y, meuCamera.transform.rotation.eulerAngles.z);
             }
         }
-    }
-    private void Cover2()
-    {
-
     }
 }

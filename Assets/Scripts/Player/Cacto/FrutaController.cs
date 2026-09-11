@@ -1,9 +1,11 @@
+using FMODUnity;
 using UnityEngine;
 
 public class FrutaController : MonoBehaviour
 {
     private VidaController vidaPlayer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private EventReference cactusSound;
+
     void Start()
     {
         GameObject player = GameObject.Find("Player");
@@ -18,5 +20,6 @@ public class FrutaController : MonoBehaviour
     private void OnDestroy()
     {
         vidaPlayer.Curar(1);
+        RuntimeManager.PlayOneShot(cactusSound);
     }
 }
