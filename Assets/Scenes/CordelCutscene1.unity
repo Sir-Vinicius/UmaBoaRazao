@@ -333,7 +333,7 @@ MonoBehaviour:
   cardCanvasGroup: {fileID: 1680404980}
   restartButtonCanvasGroup: {fileID: 0}
   exitCanvasGroup: {fileID: 0}
-  fadeDuration: 5
+  fadeDuration: 2.5
   fadeIn: 1
 --- !u!225 &198760657
 CanvasGroup:

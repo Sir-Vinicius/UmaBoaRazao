@@ -4014,7 +4014,7 @@ MonoBehaviour:
   cardCanvasGroup: {fileID: 0}
   restartButtonCanvasGroup: {fileID: 0}
   exitCanvasGroup: {fileID: 0}
-  fadeDuration: 5
+  fadeDuration: 1
   fadeIn: 1
 --- !u!225 &1768407965
 CanvasGroup:
