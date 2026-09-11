@@ -50,6 +50,20 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   shootDistance: 100
   dano: 1
+  shootSound:
+    Guid:
+      Data1: 1114474377
+      Data2: 1108417618
+      Data3: -456523351
+      Data4: 1109158547
+    Path: event:/shoot_sfx
+  ammoSound:
+    Guid:
+      Data1: -261387539
+      Data2: 1175605717
+      Data3: 834425996
+      Data4: -1484315060
+    Path: event:/ammo_sfx
 --- !u!114 &6703835177474892253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +79,13 @@ MonoBehaviour:
   capacidadeCarregador: 6
   municaoAtual: 6
   municaoReserva: 999999
+  reloadSound:
+    Guid:
+      Data1: 886192017
+      Data2: 1339649648
+      Data3: -1118536571
+      Data4: 1939973569
+    Path: event:/reload_sfx
 --- !u!114 &6063534824774719323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,3 +102,17 @@ MonoBehaviour:
   maxVida: 0
   morto: 0
   destruirAoMorrer: 0
+  damageSound:
+    Guid:
+      Data1: -1696455421
+      Data2: 1159804989
+      Data3: -99907153
+      Data4: 1491075638
+    Path: event:/damage_sfx
+  deathSound:
+    Guid:
+      Data1: 1917428490
+      Data2: 1110229397
+      Data3: -1098031210
+      Data4: 247139272
+    Path: event:/death_sfx

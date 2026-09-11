@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
     public GameObject pauseUI;
     public GameObject continueButton;
 
+    public FadingScript fading;
+
     //Botão de resetar fase
     public void OnRestartPress()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(TransicaoDeCena(SceneManager.GetActiveScene().name));
     }
 
     //Botão de continuar fase no modal de pause
@@ -36,13 +38,13 @@ public class UIManager : MonoBehaviour
     //Botão de Créditos - Main Menu
     public void OnCreditsPress()
     {
-        SceneManager.LoadScene("Credits");
+        StartCoroutine(TransicaoDeCena("Credits"));
     }
 
     //Botão de Sair - PauseUI
     public void OnMainMenuPress()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(TransicaoDeCena("MainMenu"));
     }
 
     public void OnJogarPress()
@@ -50,16 +52,30 @@ public class UIManager : MonoBehaviour
         //Zera o save para começar do inicio
         PlayerPrefs.SetInt("CheckpointNode", 0);
         //Cutscene na primeira vez que for jogar
-        SceneManager.LoadScene("CordelCutscene1");
+        StartCoroutine(TransicaoDeCena("CordelCutscene1"));
     }
 
     public void OnContinuePress()
     {
         //TROCAR PARA CENA DA GAMEPLAY
         //Carrega a scene e mantém o save intacto
-        SceneManager.LoadScene("CordelCutscene1");
+        StartCoroutine(TransicaoDeCena("CordelCutscene1"));
     }
 
+    public void OnGameOver()
+    {
+        Debug.Log("GAMEOVER CUTSCENE");
+        StartCoroutine(TransicaoDeCena("GameOverCutscene"));
+    }
+
+    private IEnumerator TransicaoDeCena(string nomeDaCena)
+    {
+        fading.FadeOut();
+
+        yield return new WaitForSeconds(fading.fadeDuration);
+
+        SceneManager.LoadScene(nomeDaCena);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

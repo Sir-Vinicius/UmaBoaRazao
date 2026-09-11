@@ -6,7 +6,9 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private int dano = 2;
     [SerializeField] private float intervaloAtaque;
 
+    // sons
     [SerializeField] private EventReference enemyShootSound;
+    [SerializeField] private EventReference flybySound;
 
     private float proximoAtaque;
     private VidaController vidaPlayer;
@@ -26,8 +28,6 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (Vector3.Distance(transform.position, enemy.pontoAlvo) < 0.1f)
         {
             if (arrivedAtTarget)
@@ -45,7 +45,6 @@ public class EnemyAttack : MonoBehaviour
                 enemy.indoParaAlvo = false;
             }
         }
-       
     }
 
     private void Atacar()
@@ -60,6 +59,7 @@ public class EnemyAttack : MonoBehaviour
         else
         {
             Debug.Log("Bloqueado");
+            RuntimeManager.PlayOneShot(flybySound, transform.position);
         }
         enemy.meuAnimation.SetBool("Atirando", false);
     }

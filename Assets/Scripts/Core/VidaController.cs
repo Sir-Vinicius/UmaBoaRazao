@@ -11,6 +11,7 @@ public class VidaController : MonoBehaviour
     [SerializeField] private EventReference damageSound;
     [SerializeField] private EventReference deathSound;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     /*public void VidaIniciada(int vidaValue)
@@ -27,6 +28,13 @@ public class VidaController : MonoBehaviour
 
         vidaAtual -= dano;
 
+        if (gameObject.CompareTag("Player"))
+        {
+            HUDManager.Instancia.AtualizarVida(vidaAtual);
+
+        }
+
+
         Debug.Log($"{gameObject.name} recebeu {dano} de dano. Vida atual: {vidaAtual}/{maxVida}");
 
         if (vidaAtual <= 0)
@@ -37,6 +45,16 @@ public class VidaController : MonoBehaviour
             Debug.Log($"{gameObject.name} morreu!");
 
             RuntimeManager.PlayOneShot(deathSound, transform.position);
+
+            if (gameObject.CompareTag("Player"))
+            {
+                UIManager uiManagerDaCena = FindAnyObjectByType<UIManager>();
+
+                if (uiManagerDaCena != null)
+                {
+                    uiManagerDaCena.OnGameOver();
+                }
+            }
 
             if (destruirAoMorrer) { Destroy(gameObject); }
 

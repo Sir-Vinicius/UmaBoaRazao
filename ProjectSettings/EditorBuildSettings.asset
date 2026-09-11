@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CordelCutscene1.unity
     guid: 5a912d243bc0a9e4ea2d01c365b76328
+  - enabled: 1
+    path: Assets/Scenes/GameOverCutscene.unity
+    guid: ac5cb58b86e59094aa16ce6426c0e149
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
