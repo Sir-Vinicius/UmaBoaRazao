@@ -9,6 +9,7 @@ public class CutSceneManager : MonoBehaviour
     public float readTime = 10f;
     string nextScene;
 
+    string cenaAtual;
 
     private IEnumerator cutsceneRoutine()
     {
@@ -17,14 +18,24 @@ public class CutSceneManager : MonoBehaviour
         fading.FadeOut();
         fading.FadeOutFocus();
         yield return new WaitForSeconds(fading.fadeDuration);
+
         //adicionar um if para cada cutscene
-        SceneManager.LoadScene("MainMenu");
-        
+
+        if (cenaAtual == "CordelCutscene1") 
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        else if (cenaAtual == "CordelCutscene2")
+        {
+            SceneManager.LoadScene("Credits");
+        }       
 
     } 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cenaAtual = SceneManager.GetActiveScene().name;
+
         StartCoroutine(cutsceneRoutine());
     }
 

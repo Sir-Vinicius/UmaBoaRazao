@@ -606,7 +606,7 @@ MonoBehaviour:
   cardCanvasGroup: {fileID: 1680404980}
   restartButtonCanvasGroup: {fileID: 588187243}
   exitCanvasGroup: {fileID: 1386945740}
-  fadeDuration: 400
+  fadeDuration: 2.5
   fadeIn: 1
 --- !u!225 &198760657
 CanvasGroup:
@@ -2636,7 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutSceneManager
   fading: {fileID: 198760656}
-  readTime: 10
+  readTime: 400
 --- !u!4 &1665125879
 Transform:
   m_ObjectHideFlags: 0

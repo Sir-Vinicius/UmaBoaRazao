@@ -62,6 +62,11 @@ public class UIManager : MonoBehaviour
         StartCoroutine(TransicaoDeCena("CordelCutscene1"));
     }
 
+    public void OnGameOver()
+    {
+        Debug.Log("GAMEOVER CUTSCENE");
+        StartCoroutine(TransicaoDeCena("GameOverCutscene"));
+    }
 
     private IEnumerator TransicaoDeCena(string nomeDaCena)
     {
