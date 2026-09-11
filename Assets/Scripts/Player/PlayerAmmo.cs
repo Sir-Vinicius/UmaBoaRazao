@@ -29,6 +29,8 @@ public class PlayerAmmo : MonoBehaviour
         {
             municaoAtual--;
 
+            HUDManager.Instancia.AtualizarBalas(municaoAtual);
+
             Debug.Log(
                 "[Ammo] Munição: " +
                 municaoAtual + "/" +
@@ -58,6 +60,8 @@ public class PlayerAmmo : MonoBehaviour
 
         municaoAtual += quantidadeRecarregada;
         municaoReserva -= quantidadeRecarregada;
+
+        HUDManager.Instancia.AtualizarBalas(municaoAtual);
 
         Debug.Log(
             "[Ammo] Recarregou: " +

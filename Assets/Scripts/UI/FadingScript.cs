@@ -9,6 +9,8 @@ public class FadingScript : MonoBehaviour
 
     // CG do card de cordel para efeito de foco
     public CanvasGroup cardCanvasGroup;
+    public CanvasGroup restartButtonCanvasGroup;
+    public CanvasGroup exitCanvasGroup;
     public float fadeDuration = 5.0f;
     public bool fadeIn = false;
 
@@ -16,26 +18,40 @@ public class FadingScript : MonoBehaviour
     public void FadeIn()
     {
         StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0, fadeDuration));
+        Debug.Log("FADEIN");
     }
 
     public void FadeOut()
     {
         StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 1, fadeDuration));
+        Debug.Log("FADEOUT");
+
     }
 
-    public void FadeInCardFocus()
+    public void FadeInFocus()
     {
         if (cardCanvasGroup != null)
         {
             StartCoroutine(FadeCanvasGroup(cardCanvasGroup, cardCanvasGroup.alpha, 1, fadeDuration));
+            if (restartButtonCanvasGroup != null)
+            {
+                StartCoroutine(FadeCanvasGroup(restartButtonCanvasGroup, restartButtonCanvasGroup.alpha, 1, fadeDuration));
+                StartCoroutine(FadeCanvasGroup(exitCanvasGroup, exitCanvasGroup.alpha, 1, fadeDuration));
+            }
+
         }
     }
 
-    public void FadeOutCardFocus()
+    public void FadeOutFocus()
     {
         if (cardCanvasGroup != null)
         {
             StartCoroutine(FadeCanvasGroup(cardCanvasGroup, cardCanvasGroup.alpha, 0, fadeDuration));
+            if (restartButtonCanvasGroup != null)
+            {
+                StartCoroutine(FadeCanvasGroup(restartButtonCanvasGroup, restartButtonCanvasGroup.alpha, 0, fadeDuration));
+                StartCoroutine(FadeCanvasGroup(exitCanvasGroup, exitCanvasGroup.alpha, 0, fadeDuration));
+            }            
         }
     }
 
@@ -60,12 +76,12 @@ public class FadingScript : MonoBehaviour
         if (fadeIn)
         {
             FadeIn();
-            FadeInCardFocus();
+            FadeInFocus();
         }
         else
         {
             FadeOut();
-            FadeOutCardFocus();
+            FadeOutFocus();
         }
     }
 
