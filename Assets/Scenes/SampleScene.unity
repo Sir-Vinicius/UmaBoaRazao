@@ -32191,6 +32191,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: outSound.Path
+      value: event:/out_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: hideSound.Path
+      value: event:/hide_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: outSound.Guid.Data1
+      value: 320493741
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: outSound.Guid.Data2
+      value: 1104786514
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: outSound.Guid.Data3
+      value: 1738367405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: outSound.Guid.Data4
+      value: -1014778615
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: hideSound.Guid.Data1
+      value: 52397281
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: hideSound.Guid.Data2
+      value: 1251364360
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: hideSound.Guid.Data3
+      value: 919474350
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273383882875230267, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
+      propertyPath: hideSound.Guid.Data4
+      value: 1399415212
+      objectReference: {fileID: 0}
     - target: {fileID: 4749139253762056002, guid: 66434a87b5d0fa845909e20279117bbf, type: 3}
       propertyPath: crosshair
       value: 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4004961275480948239}
-  - component: {fileID: 740947482960617026}
+  - component: {fileID: 706951988455059630}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 8218382926715562999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &740947482960617026
+--- !u!114 &706951988455059630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1846732441429308367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6598640002622cd44a04f4916c62f215, type: 3}
+  m_Script: {fileID: 11500000, guid: 7126b6ffb2a73cc47a21cd875703faea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerController
+  horda: 0
+  intervaloSpawn: 2
   inimigos: []
-  meuEnyme: {fileID: 543334891319101343, guid: dd3d7b1a9f2bac341aecc96f3a1316f6, type: 3}
+  meuEnemy: {fileID: 543334891319101343, guid: dd3d7b1a9f2bac341aecc96f3a1316f6, type: 3}
   meuCamera: {fileID: 0}
   railCamera: {fileID: 0}
 --- !u!1 &5426303928053733644

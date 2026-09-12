@@ -158,6 +158,13 @@ MonoBehaviour:
       Data3: -1987440970
       Data4: 1463375189
     Path: event:/enemyshoot_sfx
+  flybySound:
+    Guid:
+      Data1: -1103899381
+      Data2: 1311524491
+      Data3: -676751941
+      Data4: 1228454301
+    Path: event:/flyby_sfx
   arrivedAtTarget: 1
 --- !u!114 &-7457407520474249016
 MonoBehaviour:
@@ -177,11 +184,11 @@ MonoBehaviour:
   destruirAoMorrer: 1
   damageSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -356761606
+      Data2: 1293364868
+      Data3: -577153866
+      Data4: -2087135304
+    Path: event:/enemydamage_sfx
   deathSound:
     Guid:
       Data1: 1539820666

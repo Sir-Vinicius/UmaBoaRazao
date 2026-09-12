@@ -13,12 +13,15 @@ public class PlayerAim : MonoBehaviour
     [SerializeField] private EventReference ammoSound;
 
     private PlayerAmmo playerAmmo;
+    private CoverController coverController;
 
     void Awake()
     {
         playerAmmo = GetComponent<PlayerAmmo>();
         playerCamera = FindAnyObjectByType<Camera>();
+        coverController = GetComponent<CoverController>();
         Debug.Log("[PlayerAim] PlayerAmmo encontrado: " + playerAmmo);
+        Debug.Log("[PlayerAim] CoverController encontrado: " + coverController);
     }
 
     void Start()
@@ -41,6 +44,11 @@ public class PlayerAim : MonoBehaviour
 
     private void Atirar()
     {
+        if (coverController != null && coverController.isInCover)
+        {
+            Debug.Log("[PlayerAim] Não pode atirar enquanto está em cover!");
+            return;
+        }
 
         if (!playerAmmo.TemMunicao())
         {
