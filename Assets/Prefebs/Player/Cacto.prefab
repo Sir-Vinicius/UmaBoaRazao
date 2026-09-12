@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.52, y: 0.961, z: 18.677}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 0.9877, y: 1.8636, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4296288094516431081}
@@ -128,7 +128,6 @@ GameObject:
   - component: {fileID: 3199508993415960095}
   - component: {fileID: 300418239041899066}
   - component: {fileID: 7915869799304751918}
-  - component: {fileID: 3305145735569053395}
   m_Layer: 0
   m_Name: Fruta
   m_TagString: Untagged
@@ -145,8 +144,8 @@ Transform:
   m_GameObject: {fileID: 9185165047931093959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6588, y: 0.989, z: -0.132}
-  m_LocalScale: {x: 0.48302835, y: 0.2735, z: 0.4843138}
+  m_LocalPosition: {x: -0.69, y: 0.937, z: -0.132}
+  m_LocalScale: {x: 0.424472, y: 0.24989694, z: 0.4843138}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3810357080720994833}
@@ -245,15 +244,17 @@ MonoBehaviour:
   maxVida: 1
   morto: 0
   destruirAoMorrer: 1
---- !u!114 &3305145735569053395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9185165047931093959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94383ce8f6035247b4ad23e89509fab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FrutaController
+  damageSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  deathSound:
+    Guid:
+      Data1: 1621301245
+      Data2: 1288916907
+      Data3: 1678472364
+      Data4: 495567666
+    Path: event:/cactus_sfx
