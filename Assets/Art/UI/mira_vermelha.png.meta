@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 05d83f3251e17bc43976220799d85a60
+guid: 12be215d2a5abc847a873e8a1ba33da4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1712362434562858983
-    second: Inimigo_TEMP_Atirando_0
+      213: 3434467981709671876
+    second: mira_vermelha_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 650
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inimigo_TEMP_Atirando_0
+      name: mira_vermelha_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 784
-        height: 1172
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ef97decf8883c710800000000000000
-      internalID: 1712362434562858983
+      spriteID: 4cdf14ace6ea9af20800000000000000
+      internalID: 3434467981709671876
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inimigo_TEMP_Atirando_0: 1712362434562858983
+      mira_vermelha_0: 3434467981709671876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

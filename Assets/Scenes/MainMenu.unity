@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 215344347}
   - component: {fileID: 215344346}
   - component: {fileID: 215344345}
+  - component: {fileID: 215344348}
   m_Layer: 5
   m_Name: SairButton
   m_TagString: Untagged
@@ -684,6 +685,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215344343}
   m_CullTransparentMesh: 1
+--- !u!114 &215344348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215344343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3a2487469478408acc11a4a9f39c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverSound
+  uiSound: {fileID: 2143752874}
 --- !u!1 &243530406
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +835,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243530406}
   m_CullTransparentMesh: 1
+--- !u!1001 &256953417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.09297
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.71132
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490864591186241019, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: m_Name
+      value: MusicManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
 --- !u!1 &322615790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,6 +3541,7 @@ GameObject:
   - component: {fileID: 1378495317}
   - component: {fileID: 1378495316}
   - component: {fileID: 1378495315}
+  - component: {fileID: 1378495318}
   m_Layer: 5
   m_Name: JogarButton
   m_TagString: Untagged
@@ -3592,6 +3664,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378495313}
   m_CullTransparentMesh: 1
+--- !u!114 &1378495318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378495313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3a2487469478408acc11a4a9f39c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverSound
+  uiSound: {fileID: 2143752874}
 --- !u!1 &1397972990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,6 +4208,7 @@ GameObject:
   - component: {fileID: 1770365633}
   - component: {fileID: 1770365632}
   - component: {fileID: 1770365631}
+  - component: {fileID: 1770365634}
   m_Layer: 5
   m_Name: CreditosButton
   m_TagString: Untagged
@@ -4244,6 +4330,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770365629}
   m_CullTransparentMesh: 1
+--- !u!114 &1770365634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770365629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3a2487469478408acc11a4a9f39c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverSound
+  uiSound: {fileID: 2143752874}
 --- !u!1 &1796458508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,6 +4355,7 @@ GameObject:
   - component: {fileID: 1796458512}
   - component: {fileID: 1796458511}
   - component: {fileID: 1796458510}
+  - component: {fileID: 1796458513}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -4365,6 +4465,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796458508}
   m_CullTransparentMesh: 1
+--- !u!114 &1796458513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796458508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3a2487469478408acc11a4a9f39c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverSound
+  uiSound: {fileID: 2143752874}
 --- !u!1 &1902170492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4792,6 +4905,7 @@ MonoBehaviour:
   pauseUI: {fileID: 1963390082}
   continueButton: {fileID: 1796458508}
   fading: {fileID: 1768407964}
+  uiSound: {fileID: 2143752874}
 --- !u!4 &1963390084
 Transform:
   m_ObjectHideFlags: 0
@@ -4976,6 +5090,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115981069}
   m_CullTransparentMesh: 1
+--- !u!1001 &2143752873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.09297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.71132
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627846353309395460, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964248671783476521, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+      propertyPath: m_Name
+      value: UISoundController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+--- !u!114 &2143752874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3886397300543199425, guid: f63c3755a66f86148994258a3ec9173a, type: 3}
+  m_PrefabInstance: {fileID: 2143752873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945085a3480d0874bb5eccfb7785e019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UISoundController
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4986,3 +5168,5 @@ SceneRoots:
   - {fileID: 1110925166}
   - {fileID: 1768407969}
   - {fileID: 1963390084}
+  - {fileID: 2143752873}
+  - {fileID: 256953417}
