@@ -1,10 +1,11 @@
-using UnityEngine;
 using FMODUnity;
+using Unity.Burst.Intrinsics;
+using UnityEngine;
 
 public class VidaController : MonoBehaviour
 {
 
-    [SerializeField] private int vidaAtual, maxVida;
+    [SerializeField] public int vidaAtual, maxVida;
     [SerializeField] private bool morto = false;
     [SerializeField] private bool destruirAoMorrer = true;
 
@@ -28,11 +29,11 @@ public class VidaController : MonoBehaviour
 
         vidaAtual -= dano;
 
-        if (gameObject.CompareTag("Player"))
-        {
-            HUDManager.Instancia.AtualizarVida(vidaAtual);
+        //if (gameObject.CompareTag("Player"))
+        //{
+            //HUDManager.Instancia.AtualizarVida(vidaAtual);
 
-        }
+        //}
 
 
         Debug.Log($"{gameObject.name} recebeu {dano} de dano. Vida atual: {vidaAtual}/{maxVida}");
@@ -54,6 +55,10 @@ public class VidaController : MonoBehaviour
                 {
                     uiManagerDaCena.OnGameOver();
                 }
+            }
+            if (gameObject.CompareTag("Enemy"))
+            {
+  
             }
 
             if (destruirAoMorrer) { Destroy(gameObject); }

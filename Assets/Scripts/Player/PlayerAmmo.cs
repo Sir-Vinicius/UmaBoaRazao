@@ -9,12 +9,40 @@ public class PlayerAmmo : MonoBehaviour
     [SerializeField] private int municaoReserva = 999999;
 
     [SerializeField] private EventReference reloadSound;
+    [SerializeField] private GameObject arma;
+    public bool recarregando = false;
+    private float espera;
     void Start()
     {
         
     }
     void Update()
     {
+        espera -= Time.deltaTime;
+
+        if (espera <= 0f)
+        {
+            recarregando = false;
+            var direcao = (new Vector3(arma.transform.localPosition.x, -0.38f, arma.transform.localPosition.z) - arma.transform.localPosition).normalized;
+
+            if (Vector3.Distance(arma.transform.localPosition, new Vector3(arma.transform.localPosition.x, -0.38f, arma.transform.localPosition.z)) > 0.01f)
+            {
+                arma.transform.localPosition = arma.transform.localPosition + direcao * 3.5f * Time.deltaTime;
+
+            }
+        }
+        if (espera > 0f)
+        {
+            var direcao = (new Vector3(arma.transform.localPosition.x, -0.73f, arma.transform.localPosition.z) - arma.transform.localPosition).normalized;
+
+            if (Vector3.Distance(arma.transform.localPosition, new Vector3(arma.transform.localPosition.x, -0.73f, arma.transform.localPosition.z)) > 0.01f)
+            {
+                arma.transform.localPosition = arma.transform.localPosition + direcao * 3.5f * Time.deltaTime;
+
+            }
+        }
+
+
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             Recarregar();
@@ -32,7 +60,7 @@ public class PlayerAmmo : MonoBehaviour
         {
             municaoAtual--;
 
-            //HUDManager.Instancia.AtualizarBalas(municaoAtual);
+            HUDManager.Instancia.AtualizarBalas(municaoAtual);
 
             Debug.Log(
                 "[Ammo] Munição: " +
@@ -63,9 +91,11 @@ public class PlayerAmmo : MonoBehaviour
 
         municaoAtual += quantidadeRecarregada;
         municaoReserva -= quantidadeRecarregada;
+        recarregando = true;
+        espera = 2.122f;
 
         RuntimeManager.PlayOneShot(reloadSound);
-        //HUDManager.Instancia.AtualizarBalas(municaoAtual);
+        HUDManager.Instancia.AtualizarBalas(municaoAtual);
 
         Debug.Log(
             "[Ammo] Recarregou: " +

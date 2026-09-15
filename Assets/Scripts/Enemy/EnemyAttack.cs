@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] private int dano = 2;
+    [SerializeField] private int dano = 1;
     [SerializeField] private float intervaloAtaque;
 
     // sons
@@ -33,7 +33,7 @@ public class EnemyAttack : MonoBehaviour
             if (arrivedAtTarget)
             {
                 enemy.meuAnimation.SetBool("Atirando", true);
-                intervaloAtaque = Random.Range(1f, 3f);
+                intervaloAtaque = Random.Range(2f, 4f);
                 proximoAtaque = Time.time + intervaloAtaque;
                 arrivedAtTarget = false;
             }
