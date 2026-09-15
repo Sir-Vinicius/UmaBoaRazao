@@ -98,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
       propertyPath: maxVida
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
       propertyPath: vidaAtual
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
       propertyPath: deathSound.Path
@@ -111,6 +111,10 @@ PrefabInstance:
     - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
       propertyPath: damageSound.Path
       value: event:/damage_sfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
+      propertyPath: destruirAoMorrer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6063534824774719323, guid: 4db92002a8e8f5f4988f7c3f7eba8bea, type: 3}
       propertyPath: deathSound.Guid.Data1
@@ -192,4 +196,18 @@ MonoBehaviour:
   posicaoOriginal: {x: 0, y: 0, z: 0}
   coverObject: {fileID: 0}
   isInCover: 0
+  hideSound:
+    Guid:
+      Data1: 52397281
+      Data2: 1251364360
+      Data3: 919474350
+      Data4: 1399415212
+    Path: event:/hide_sfx
+  outSound:
+    Guid:
+      Data1: 320493741
+      Data2: 1104786514
+      Data3: 1738367405
+      Data4: -1014778615
+    Path: event:/out_sfx
   alvoPitch: 20

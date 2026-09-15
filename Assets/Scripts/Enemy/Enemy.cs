@@ -33,6 +33,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var vida = GetComponent<VidaController>();
+
+        if (vida.vidaAtual <= 0)
+        {
+            
+        }
+
         switch (pontoXYZ)
         {
             case 1:

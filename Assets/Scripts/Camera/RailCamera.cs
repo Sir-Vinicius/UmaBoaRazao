@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RailCamera : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class RailCamera : MonoBehaviour
     [SerializeField] private float velOlhar = 2f;
     [SerializeField] private float direcaoY;
     [SerializeField] public bool rotacionarCamera = false;
+
+    private bool gameOverChamado = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,7 +39,7 @@ public class RailCamera : MonoBehaviour
         }
 
         */
-         
+
     }
 
     // Update is called once per frame
@@ -69,23 +73,51 @@ public class RailCamera : MonoBehaviour
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
         }
-        if(Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f && rotacionarCamera)
+        if (Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f && rotacionarCamera)
         {
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlharCerta, velOlhar * Time.deltaTime);
         }
 
-        //SISTEMA DE SAVE
-        /*
-        
-        else
+        var player = GameObject.FindWithTag("Player");
+        if (player == null)
         {
-            nodesNumero++; //Pula para o próximo alvo
+            var direcaoMorte = (new Vector3(posicaoAtual.x, 90f, posicaoAtual.z) - posicaoAtual).normalized;
+            Quaternion direcaoMorteOlhar = Quaternion.LookRotation(direcaoMorte);
 
-            PlayerPrefs.SetInt("CheckpointNode", nodesNumero); //salva o novo alvo 
-            PlayerPrefs.Save();
-        }
+         
+            camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoMorteOlhar, velOlhar * Time.deltaTime);
 
-        */
+            Quaternion target = Quaternion.Euler(-90f, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+
+            if (!gameOverChamado)
+            {
+                gameOverChamado = true; 
+
+                UIManager uiManagerDaCena = FindAnyObjectByType<UIManager>();
+
+                if (uiManagerDaCena != null)
+                {
+                    uiManagerDaCena.OnGameOver();
+                }
+                else
+                {
+                    Debug.LogError("ATENÇÃO: O Prefab do UIManager não está nesta cena!");
+                }
+            }
+
+                //SISTEMA DE SAVE
+                /*
+
+                else
+                {
+                    nodesNumero++; //Pula para o próximo alvo
+
+                    PlayerPrefs.SetInt("CheckpointNode", nodesNumero); //salva o novo alvo 
+                    PlayerPrefs.Save();
+                }
+
+                */
+            }
     }
 }
 
