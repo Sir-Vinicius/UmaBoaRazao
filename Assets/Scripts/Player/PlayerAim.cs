@@ -36,7 +36,7 @@ public class PlayerAim : MonoBehaviour
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         crosshair.position = mousePosition;
 
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame && playerAmmo.recarregando == false)
         {
             Atirar();
         }

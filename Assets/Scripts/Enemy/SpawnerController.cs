@@ -45,7 +45,7 @@ public class SpawnerController : MonoBehaviour
                         SpawnEnemy(1, -3f, false, 1);
                         SpawnEnemy(2, 5.5f, false, 1);
                         SpawnEnemy(3, 2f, true, 1);
-                        SpawnEnemy(4, 1.1f, true, 2);
+                        SpawnEnemy(4, 1.6f, true, 2);
                         evento = true;
                         
                         evento = true;
@@ -100,8 +100,8 @@ public class SpawnerController : MonoBehaviour
                         {
                             
                                                       
-                         SpawnEnemy(12, 1.182f, true, 2);
-                         SpawnEnemy(13, 1.182f, true, 2);
+                         SpawnEnemy(12, 1.6f, true, 2);
+                         SpawnEnemy(13, 1.6f, true, 2);
                          SpawnEnemy(14, -21.1f, false, 1);
                          SpawnEnemy(15, -10.07f, false, 1);
                          SpawnEnemy(16, -24.62f, true, 1);
@@ -115,8 +115,8 @@ public class SpawnerController : MonoBehaviour
                         if (horda == 1 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
                         {
                             
-                            SpawnEnemy(12, 1.182f, true, 2);
-                            SpawnEnemy(13, 1.182f, true, 2);
+                            SpawnEnemy(12, 1.6f, true, 2);
+                            SpawnEnemy(13, 1.6f, true, 2);
                             SpawnEnemy(14, -21.1f, false, 1);
                             SpawnEnemy(15, -10.07f, false, 1);
                             SpawnEnemy(16, -24.62f, true, 1);
@@ -143,9 +143,9 @@ public class SpawnerController : MonoBehaviour
                         if (evento == false)
                         {
                             
-                            SpawnEnemy(17, 1.3f, true, 2);
+                            SpawnEnemy(17, 1.6f, true, 2);
                             SpawnEnemy(18, 5.6f, false, 1);
-                            SpawnEnemy(19, 1.3f, true, 2);
+                            SpawnEnemy(19, 1.6f, true, 2);
                             SpawnEnemy(20, 9.9f, true, 1);
                             SpawnEnemy(21, 6.9f, true, 1);
                             
@@ -156,9 +156,9 @@ public class SpawnerController : MonoBehaviour
                         }
                         if (horda == 1 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
                         {
-                            SpawnEnemy(17, 1.3f, true, 2);
+                            SpawnEnemy(17, 1.6f, true, 2);
                             SpawnEnemy(18, 7.3f, false, 1);
-                            SpawnEnemy(19, 1.3f, true, 2);
+                            SpawnEnemy(19, 1.6f, true, 2);
                             SpawnEnemy(20, 9.9f, true, 1);
                             SpawnEnemy(21, 6.9f, true, 1);
                             horda = 0;
@@ -188,7 +188,7 @@ public class SpawnerController : MonoBehaviour
                     {
                         if (evento == false)
                         {
-                            SpawnEnemy(22, 1.1f, true, 2);
+                            SpawnEnemy(22, 1.6f, true, 2);
                             SpawnEnemy(23, 23.6f, true, 1);
                             SpawnEnemy(24, 19.3f, false, 1);
                             SpawnEnemy(25, 17.5f, false, 1);
@@ -200,7 +200,7 @@ public class SpawnerController : MonoBehaviour
                         }
                         if (horda == 1 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
                         {
-                            SpawnEnemy(22, 1.1f, true, 2);
+                            SpawnEnemy(22, 1.6f, true, 2);
                             SpawnEnemy(23, 23.6f, true, 1);
                             SpawnEnemy(24, 19.3f, false, 1);
                             SpawnEnemy(25, 17.5f, false, 1);
@@ -213,8 +213,8 @@ public class SpawnerController : MonoBehaviour
                         }
                         if (horda == 2 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
                         {
-                            Debug.Log("Spawnei");
-                            SpawnEnemy(22, 1.1f, true, 2);
+                            
+                            SpawnEnemy(22, 1.6f, true, 2);
                             SpawnEnemy(23, 23.6f, true, 1);
                             SpawnEnemy(24, 19.3f, false, 1);
                             SpawnEnemy(25, 17.5f, false, 1);
