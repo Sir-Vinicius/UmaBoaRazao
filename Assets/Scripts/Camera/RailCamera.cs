@@ -12,6 +12,9 @@ public class RailCamera : MonoBehaviour
     [SerializeField] private float velOlhar = 2f;
     [SerializeField] private float direcaoY;
     [SerializeField] public bool rotacionarCamera = false;
+
+    private bool gameOverChamado = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -82,29 +85,39 @@ public class RailCamera : MonoBehaviour
             Quaternion direcaoMorteOlhar = Quaternion.LookRotation(direcaoMorte);
 
          
-                camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoMorteOlhar, velOlhar * Time.deltaTime);
+            camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoMorteOlhar, velOlhar * Time.deltaTime);
 
             Quaternion target = Quaternion.Euler(-90f, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
-            if (Quaternion.Angle(camera.transform.rotation, target) < 0.5f)
+
+            if (!gameOverChamado)
             {
+                gameOverChamado = true; 
 
-                SceneManager.LoadScene("GameOverCutscene");
-                
-                
-            }
-            //SISTEMA DE SAVE
-            /*
+                UIManager uiManagerDaCena = FindAnyObjectByType<UIManager>();
 
-            else
-            {
-                nodesNumero++; //Pula para o próximo alvo
-
-                PlayerPrefs.SetInt("CheckpointNode", nodesNumero); //salva o novo alvo 
-                PlayerPrefs.Save();
+                if (uiManagerDaCena != null)
+                {
+                    uiManagerDaCena.OnGameOver();
+                }
+                else
+                {
+                    Debug.LogError("ATENÇÃO: O Prefab do UIManager não está nesta cena!");
+                }
             }
 
-            */
-        }
+                //SISTEMA DE SAVE
+                /*
+
+                else
+                {
+                    nodesNumero++; //Pula para o próximo alvo
+
+                    PlayerPrefs.SetInt("CheckpointNode", nodesNumero); //salva o novo alvo 
+                    PlayerPrefs.Save();
+                }
+
+                */
+            }
     }
 }
 

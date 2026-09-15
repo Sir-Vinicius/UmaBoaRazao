@@ -619,8 +619,8 @@ CanvasGroup:
   m_GameObject: {fileID: 198760655}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &198760658
 MonoBehaviour:
@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 588187241}
   - component: {fileID: 588187240}
   - component: {fileID: 588187243}
+  - component: {fileID: 588187244}
   m_Layer: 5
   m_Name: RestartButtonClear
   m_TagString: Untagged
@@ -1406,6 +1407,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &588187244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588187238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3a2487469478408acc11a4a9f39c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverSound
+  uiSound: {fileID: 491053757}
 --- !u!1 &643099236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,6 +2631,7 @@ GameObject:
   - component: {fileID: 1386945738}
   - component: {fileID: 1386945737}
   - component: {fileID: 1386945740}
+  - component: {fileID: 1386945741}
   m_Layer: 5
   m_Name: ExitButtonClear
   m_TagString: Untagged
@@ -2751,6 +2766,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1386945741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386945735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d3a2487469478408acc11a4a9f39c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverSound
+  uiSound: {fileID: 491053757}
 --- !u!1 &1431030015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,7 +2830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3567,6 +3595,10 @@ PrefabInstance:
     - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: estadoInicial
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8490864591186241019, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
       propertyPath: m_Name

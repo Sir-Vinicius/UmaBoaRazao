@@ -335,7 +335,7 @@ MonoBehaviour:
   restartButtonCanvasGroup: {fileID: 0}
   exitCanvasGroup: {fileID: 0}
   textCordel: {fileID: 1028278097}
-  fadeDuration: 2.5
+  fadeDuration: 3.5
   fadeIn: 1
 --- !u!225 &198760657
 CanvasGroup:
@@ -821,6 +821,30 @@ PrefabInstance:
     - target: {fileID: 4619376826072702528, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: estadoInicial
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: musicEvent.Path
+      value: event:/music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: musicEvent.Guid.Data1
+      value: -291022957
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: musicEvent.Guid.Data2
+      value: 1220295032
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: musicEvent.Guid.Data3
+      value: 1268460185
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517206415998205284, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
+      propertyPath: musicEvent.Guid.Data4
+      value: -535620356
       objectReference: {fileID: 0}
     - target: {fileID: 8490864591186241019, guid: 089555e86785cd74aa18cdf5aedf52e5, type: 3}
       propertyPath: m_Name

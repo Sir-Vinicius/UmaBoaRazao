@@ -47,7 +47,7 @@ public class VidaController : MonoBehaviour
 
             RuntimeManager.PlayOneShot(deathSound, transform.position);
 
-            if (gameObject.CompareTag("Player"))
+            /*if (gameObject.CompareTag("Player"))
             {
                 UIManager uiManagerDaCena = FindAnyObjectByType<UIManager>();
 
@@ -59,7 +59,7 @@ public class VidaController : MonoBehaviour
             if (gameObject.CompareTag("Enemy"))
             {
   
-            }
+            }*/
 
             if (destruirAoMorrer) { Destroy(gameObject); }
 

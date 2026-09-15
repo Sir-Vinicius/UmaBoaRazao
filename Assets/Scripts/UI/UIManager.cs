@@ -52,6 +52,8 @@ public class UIManager : MonoBehaviour
     //Botão de Sair - PauseUI
     public void OnMainMenuPress()
     {
+        uiSound.PlayForward();
+        MusicManager.Instance.SetEstado(MusicState.Menu);
         StartCoroutine(TransicaoDeCena("MainMenu"));
     }
 
@@ -62,7 +64,7 @@ public class UIManager : MonoBehaviour
         //Zera o save para começar do inicio
         PlayerPrefs.SetInt("CheckpointNode", 0);
         //Música Gameplay
-        MusicManager.Instance.SetEstado(MusicState.Gameplay);
+        MusicManager.Instance.SetEstado(MusicState.Defeat);
         //Cutscene na primeira vez que for jogar
         StartCoroutine(TransicaoDeCena("CordelCutscene1"));
     }
@@ -98,14 +100,17 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Vetifica se o jogador tem save (node maior que 0)
-        if (PlayerPrefs.HasKey("CheckpointNode") && PlayerPrefs.GetInt("CheckpointNode") > 0) 
+        if (continueButton != null)
         {
-            continueButton.SetActive(true); //Ativa continueButton
-        }
-        else
-        {
-            continueButton.SetActive(false); //Desativa continueButton
+            //Verifica se o jogador tem save (node maior que 0)
+            if (PlayerPrefs.HasKey("CheckpointNode") && PlayerPrefs.GetInt("CheckpointNode") > 0)
+            {
+                continueButton.SetActive(true);
+            }
+            else
+            {
+                continueButton.SetActive(false);
+            }
         }
 
     }
