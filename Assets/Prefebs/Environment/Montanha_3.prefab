@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7642921173260987515}
   - component: {fileID: 4095028433781418876}
   - component: {fileID: 7402514971876738877}
-  - component: {fileID: 2317587594921158637}
+  - component: {fileID: 5046748893784452553}
   m_Layer: 0
   m_Name: Montanha_3
   m_TagString: Untagged
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6f41c27ed884d47868d7b314a2d95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Billboard
---- !u!65 &2317587594921158637
+--- !u!65 &5046748893784452553
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,5 +124,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.411849, y: 3.0299997, z: 0}
-  m_Center: {x: 0.089075565, y: 1.5, z: 0}
+  m_Size: {x: 1.41, y: 3.03, z: 0}
+  m_Center: {x: 0.08, y: 1.5, z: 0}

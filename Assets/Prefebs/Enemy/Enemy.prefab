@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d1637e20f6b3f40a02792a464563e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  dano: 2
+  dano: 1
   intervaloAtaque: 2
   enemyShootSound:
     Guid:
