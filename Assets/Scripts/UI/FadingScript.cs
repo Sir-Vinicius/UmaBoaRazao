@@ -11,6 +11,8 @@ public class FadingScript : MonoBehaviour
     public CanvasGroup cardCanvasGroup;
     public CanvasGroup restartButtonCanvasGroup;
     public CanvasGroup exitCanvasGroup;
+    public CanvasGroup textCordel;
+
     public float fadeDuration = 5.0f;
     public bool fadeIn = false;
 
@@ -33,10 +35,12 @@ public class FadingScript : MonoBehaviour
         if (cardCanvasGroup != null)
         {
             StartCoroutine(FadeCanvasGroup(cardCanvasGroup, cardCanvasGroup.alpha, 1, fadeDuration));
+            StartCoroutine(FadeCanvasGroup(textCordel, textCordel.alpha, 1, fadeDuration));
             if (restartButtonCanvasGroup != null)
             {
                 StartCoroutine(FadeCanvasGroup(restartButtonCanvasGroup, restartButtonCanvasGroup.alpha, 1, fadeDuration));
                 StartCoroutine(FadeCanvasGroup(exitCanvasGroup, exitCanvasGroup.alpha, 1, fadeDuration));
+                StartCoroutine(FadeCanvasGroup(textCordel, textCordel.alpha, 1, fadeDuration));
             }
 
         }
@@ -47,11 +51,13 @@ public class FadingScript : MonoBehaviour
         if (cardCanvasGroup != null)
         {
             StartCoroutine(FadeCanvasGroup(cardCanvasGroup, cardCanvasGroup.alpha, 0, fadeDuration));
+            StartCoroutine(FadeCanvasGroup(textCordel, textCordel.alpha, 0, fadeDuration));
             if (restartButtonCanvasGroup != null)
             {
                 StartCoroutine(FadeCanvasGroup(restartButtonCanvasGroup, restartButtonCanvasGroup.alpha, 0, fadeDuration));
                 StartCoroutine(FadeCanvasGroup(exitCanvasGroup, exitCanvasGroup.alpha, 0, fadeDuration));
-            }            
+                StartCoroutine(FadeCanvasGroup(textCordel, textCordel.alpha, 0, fadeDuration));
+            }
         }
     }
 
