@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7670972591291816101}
   - component: {fileID: 2140410338015667803}
   - component: {fileID: -7457407520474249016}
-  - component: {fileID: 6157304515310072061}
+  - component: {fileID: 1070372199819412777}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d1637e20f6b3f40a02792a464563e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  dano: 1
   intervaloAtaque: 2
   enemyShootSound:
     Guid:
@@ -197,7 +196,7 @@ MonoBehaviour:
       Data3: 1891054012
       Data4: 445270481
     Path: event:/enemydeath_sfx
---- !u!114 &6157304515310072061
+--- !u!114 &1070372199819412777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,8 +218,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4840121463385615507}
   - component: {fileID: 2400858365338164299}
-  - component: {fileID: 1815840498478345617}
   - component: {fileID: 7369052629606184229}
+  - component: {fileID: 5857690502285343406}
+  - component: {fileID: 6835337450622423547}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -292,7 +292,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3363349849826596142, guid: fd655dd4b7f0cd647924e2a7878f6a36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 626ee27bf1909034fbe471dac5e735f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,18 +302,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1815840498478345617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185571780042967271}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f6f41c27ed884d47868d7b314a2d95a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!95 &7369052629606184229
 Animator:
   serializedVersion: 7
@@ -336,3 +324,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5857690502285343406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185571780042967271}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6f41c27ed884d47868d7b314a2d95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BillboardInimigo
+--- !u!114 &6835337450622423547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185571780042967271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6160acb912294b04593de5b8ab1ce288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SeDestruir

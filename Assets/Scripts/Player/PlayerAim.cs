@@ -14,6 +14,7 @@ public class PlayerAim : MonoBehaviour
 
     private PlayerAmmo playerAmmo;
     private CoverController coverController;
+    [SerializeField] private ParticleSystem particulaArma = default;
 
     void Awake()
     {
@@ -39,6 +40,7 @@ public class PlayerAim : MonoBehaviour
         if (Mouse.current.leftButton.wasPressedThisFrame && playerAmmo.recarregando == false)
         {
             Atirar();
+
         }
     }
 
@@ -60,6 +62,7 @@ public class PlayerAim : MonoBehaviour
         playerAmmo.GastarMunicao();
 
         RuntimeManager.PlayOneShot(shootSound);
+        particulaArma.Play();
 
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = playerCamera.ScreenPointToRay(mousePosition);
