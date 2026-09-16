@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class RailCamera : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class RailCamera : MonoBehaviour
     [SerializeField] private float direcaoY;
     [SerializeField] public bool rotacionarCamera = false;
     [SerializeField] private PlayerFootsteps playerFootsteps;
+    [SerializeField] private float atrasoDoDialogo = 1.5f;
 
     private bool gameOverChamado = false;
+
+    private int nodeAnterior = 0;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +33,9 @@ public class RailCamera : MonoBehaviour
             nodes[i] = transform.GetChild(i).position;
         }
 
+        nodeAnterior = nodesNumero;
 
+        StartCoroutine(DispararDialogoCoroutine(nodesNumero));
         //SISTEMA DE SAVE
         /*
         
@@ -46,6 +53,12 @@ public class RailCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (nodesNumero != nodeAnterior)
+        {
+            nodeAnterior = nodesNumero;
+            StartCoroutine(DispararDialogoCoroutine(nodesNumero));
+        }
+
         MoveCamera();
 
         if (nodeCount > 1)
@@ -53,6 +66,23 @@ public class RailCamera : MonoBehaviour
             for (int i = 0; i < nodeCount - 1; i++)
             {
                 Debug.DrawLine(nodes[i], nodes[i + 1], Color.red);
+            }
+        }
+    }
+
+    private IEnumerator DispararDialogoCoroutine(int indexNode)
+    {
+        // O cronômetro que espera a câmera começar a se mover
+        yield return new WaitForSeconds(atrasoDoDialogo);
+
+        // Proteção para evitar erros caso tente ler um node que não existe
+        if (indexNode < transform.childCount)
+        {
+            DialogueTrigger trigger = transform.GetChild(indexNode).GetComponent<DialogueTrigger>();
+
+            if (trigger != null)
+            {
+                trigger.StartDialogue();
             }
         }
     }
@@ -69,15 +99,23 @@ public class RailCamera : MonoBehaviour
         Quaternion direcaoOlhar = Quaternion.LookRotation(direcao);
         Quaternion direcaoOlharCerta = Quaternion.LookRotation(diracaoCamera);
 
+        // Enquanto estiver longe, se move
         if (Vector3.Distance(posicaoAtual, railAlvo) > 0.1f)
         {
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
             playerFootsteps.PlayFootstep();
         }
-        if (Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f && rotacionarCamera)
+
+        // Quando chegar no ponto (Node)
+        if (Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f)
         {
-            camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlharCerta, velOlhar * Time.deltaTime);
+            if (rotacionarCamera)
+            {
+                camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlharCerta, velOlhar * Time.deltaTime);
+            }
+
+            
         }
 
         var player = GameObject.FindWithTag("Player");

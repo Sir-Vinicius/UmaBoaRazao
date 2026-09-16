@@ -1,8 +1,8 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI messageText;
     public GameObject backgroundBox;
 
+    public float tempoPorMensagem = 2f;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -37,6 +38,15 @@ public class DialogueManager : MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorID];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+
+        StopAllCoroutines();
+        StartCoroutine(AutoAdvance());
+    }
+
+    IEnumerator AutoAdvance()
+    {
+        yield return new WaitForSeconds(tempoPorMensagem);
+        NextMessage();
     }
 
     public void NextMessage()
@@ -55,38 +65,5 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Keyboard.current == null) return;
-        
-
-        // Teste 2: Ele detectou o aperto do espaço?
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {            
-            if (isActive)
-            {
-                NextMessage();
-            }
-        }
-
-        // Teste 3: Ele detectou o clique do mouse?
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-        {            
-            if (isActive)
-            {
-                NextMessage();
-            }
-        }
-    }
+    
 }

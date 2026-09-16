@@ -23,6 +23,9 @@ public class CutSceneManager : MonoBehaviour
 
         if (cenaAtual == "CordelCutscene1") 
         {
+            SceneManager.LoadScene("ControlesScene");
+        }
+        else if (cenaAtual == "ControlesScene") {
             MusicManager.Instance.SetEstado(MusicState.Gameplay);
             SceneManager.LoadScene("SampleScene");
         }
