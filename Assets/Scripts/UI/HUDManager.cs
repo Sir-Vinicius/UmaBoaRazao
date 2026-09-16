@@ -10,6 +10,8 @@ public class HUDManager : MonoBehaviour
     public GameObject[] vidas;
     public GameObject[] balas;
 
+    // Referência do efeito de dano
+    [SerializeField] private DamageOverlayController damageOverlay;
 
     //Criação da instancia ao iniciar a cena
     void Awake()
@@ -48,6 +50,15 @@ public class HUDManager : MonoBehaviour
             {
                 balas[i].SetActive(false);
             }
+        }
+    }
+
+    // Mostra o efeito visual quando o jogador recebe dano
+    public void MostrarDano()
+    {
+        if (damageOverlay != null)
+        {
+            damageOverlay.MostrarDano();
         }
     }
 

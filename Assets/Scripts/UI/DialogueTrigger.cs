@@ -7,10 +7,6 @@ public class DialogueTrigger : MonoBehaviour
     public Actor[] actors;
 
 
-    void Start()
-    {
-        StartDialogue();
-    }
 
     public void StartDialogue()
     {
