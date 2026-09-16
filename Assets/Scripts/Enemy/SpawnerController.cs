@@ -49,6 +49,7 @@ public class SpawnerController : MonoBehaviour
                         evento = true;
                         
                         
+                        
                         evento = true;
                     }
                 }   
@@ -100,7 +101,7 @@ public class SpawnerController : MonoBehaviour
                         if (evento == false)
                         {
 
-                                                   
+                                                  
                        SpawnEnemy(12, 1.6f, true, 2);
                        SpawnEnemy(13, 1.6f, true, 2);
                        SpawnEnemy(14, -21.1f, false, 1);
@@ -190,6 +191,7 @@ public class SpawnerController : MonoBehaviour
                     {
                         if (evento == false)
                         {
+                            
                             
                             SpawnEnemy(22, 1.6f, true, 2);
                             SpawnEnemy(23, 23.6f, true, 1);
