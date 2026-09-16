@@ -40,13 +40,14 @@ public class SpawnerController : MonoBehaviour
                 {
                     if (inimigos.Count <= 0)
                     {
-                        
+                        /*
                         //SpawnEnemy(0, 1.8f, true, 1);
                         SpawnEnemy(1, -3f, false, 1);
                         SpawnEnemy(2, 5.5f, false, 1);
                         SpawnEnemy(3, 2f, true, 1);
                         SpawnEnemy(4, 1.6f, true, 2);
                         evento = true;
+                        */
                         
                         evento = true;
                     }
@@ -61,7 +62,7 @@ public class SpawnerController : MonoBehaviour
                     {
                         if(evento == false)
                         {
-                            
+                            /*
                             SpawnEnemy(5, 11.3f, true, 3);
                             SpawnEnemy(6, 6.5f, true, 3);
                             SpawnEnemy(8, 16f, false, 3);
@@ -69,7 +70,7 @@ public class SpawnerController : MonoBehaviour
                             evento = true;
                             horda = 1;
                             intervaloSpawn = 2f;
-                            
+                            */
                             evento = true;
                         }
 
@@ -98,18 +99,19 @@ public class SpawnerController : MonoBehaviour
                     {
                         if (evento == false)
                         {
-                            
-                                                      
-                         SpawnEnemy(12, 1.6f, true, 2);
-                         SpawnEnemy(13, 1.6f, true, 2);
-                         SpawnEnemy(14, -21.1f, false, 1);
-                         SpawnEnemy(15, -10.07f, false, 1);
-                         SpawnEnemy(16, -24.62f, true, 1);
 
-                         evento = true;
-                         horda = 1;
-                         intervaloSpawn = 2f;
-                            
+                            /*                        
+                       SpawnEnemy(12, 1.6f, true, 2);
+                       SpawnEnemy(13, 1.6f, true, 2);
+                       SpawnEnemy(14, -21.1f, false, 1);
+                       SpawnEnemy(15, -10.07f, false, 1);
+                       SpawnEnemy(16, -24.62f, true, 1);
+
+                       evento = true;
+                       horda = 1;
+
+                       intervaloSpawn = 2f;
+                          */
                             evento = true;
                         }
                         if (horda == 1 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
@@ -142,7 +144,7 @@ public class SpawnerController : MonoBehaviour
                     {
                         if (evento == false)
                         {
-                            
+                            /*
                             SpawnEnemy(17, 1.6f, true, 2);
                             SpawnEnemy(18, 5.6f, false, 1);
                             SpawnEnemy(19, 1.6f, true, 2);
@@ -151,7 +153,7 @@ public class SpawnerController : MonoBehaviour
                             
                             horda = 1;
                             intervaloSpawn = 2f;
-                            
+                            */
                             evento = true;
                         }
                         if (horda == 1 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
@@ -188,14 +190,17 @@ public class SpawnerController : MonoBehaviour
                     {
                         if (evento == false)
                         {
+                            /*
                             SpawnEnemy(22, 1.6f, true, 2);
                             SpawnEnemy(23, 23.6f, true, 1);
                             SpawnEnemy(24, 19.3f, false, 1);
                             SpawnEnemy(25, 17.5f, false, 1);
                             SpawnEnemy(26, 23.7f, false, 1);
-                            evento = true;
+                            
                             horda = 1;
                             intervaloSpawn = 2f;
+                            */
+                            evento = true;
 
                         }
                         if (horda == 1 && inimigos.Count <= 0 && intervaloSpawn <= 0f)
@@ -226,9 +231,13 @@ public class SpawnerController : MonoBehaviour
 
                     }
                 }
-                    break;
+                break;
+            case 8:
+                railCamera.vel = 5;
+                //railCamera
+                break;
                 // Add more cases as needed
-               
+
         }
 
     }

@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     public bool indoParaAlvo = true;
     public bool voltandoEnemy;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,11 +34,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         var vida = GetComponent<VidaController>();
 
         if (vida.vidaAtual <= 0)
         {
-            
+            meuAnimation.SetBool("Morto", true);
+            //var bb = GetComponentInChildren<Billboard>();
+            var be = GetComponent<Billboard>();
+            //bb.enabled = false;
+            be.enabled = false;
+
         }
 
         switch (pontoXYZ)
