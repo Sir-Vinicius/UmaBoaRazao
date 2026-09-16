@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using FMODUnity;
 
 public class RailCamera : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class RailCamera : MonoBehaviour
     [SerializeField] private float velOlhar = 2f;
     [SerializeField] private float direcaoY;
     [SerializeField] public bool rotacionarCamera = false;
+    [SerializeField] private PlayerFootsteps playerFootsteps;
     [SerializeField] private float atrasoDoDialogo = 1.5f;
+
+    //cena baleia
+    [SerializeField] private EventReference dogSound;
+    private bool dogSoundPlayed = false;
 
     private bool gameOverChamado = false;
 
@@ -103,6 +109,7 @@ public class RailCamera : MonoBehaviour
         {
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
+            playerFootsteps.PlayFootstep();
         }
 
         // Quando chegar no ponto (Node)
@@ -114,6 +121,25 @@ public class RailCamera : MonoBehaviour
             }
 
             
+        }
+
+        if (nodesNumero == 8)
+        {
+            var baleia = GameObject.FindWithTag("Baleia");
+            Vector3 direcaoBaleia = (baleia.transform.position - posicaoAtual).normalized;
+            Quaternion direcaoOlharB = Quaternion.LookRotation(direcaoBaleia);
+            if (Vector3.Distance(posicaoAtual, railAlvo) < 0.5f)
+            {
+                camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlharB, velOlhar * Time.deltaTime);
+
+                if (!dogSoundPlayed)
+                {
+                    RuntimeManager.PlayOneShot(dogSound);
+                    dogSoundPlayed = true;
+                }
+
+            }
+
         }
 
         var player = GameObject.FindWithTag("Player");

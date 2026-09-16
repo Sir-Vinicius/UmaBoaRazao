@@ -51,4 +51,11 @@ MonoBehaviour:
       Data3: 1268460185
       Data4: -535620356
     Path: event:/music
-  estadoInicial: 0
+  sadMusicEvent:
+    Guid:
+      Data1: -2127966209
+      Data2: 1145999477
+      Data3: 1056717235
+      Data4: -584637774
+    Path: event:/sad_mx
+  estadoInicial: 1

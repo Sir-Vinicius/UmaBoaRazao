@@ -1,6 +1,7 @@
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerAim : MonoBehaviour
 {
@@ -78,6 +79,12 @@ public class PlayerAim : MonoBehaviour
             if (vida != null)
             {
                 vida.ReceberDano(dano);
+            }
+            if (hit.collider.CompareTag("Baleia"))
+            {
+                MusicManager.Instance.TocarSadMusic();
+                SceneManager.LoadScene("VictoryCutScene");
+
             }
         }
     }
