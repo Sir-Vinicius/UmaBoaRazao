@@ -32,7 +32,6 @@ public class VidaController : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             HUDManager.Instancia.AtualizarVida(vidaAtual);
-
         }
 
 
@@ -64,6 +63,11 @@ public class VidaController : MonoBehaviour
             if (destruirAoMorrer && !gameObject.CompareTag("Enemy")) { Destroy(gameObject); }
 
             return;
+        }
+
+        if (gameObject.CompareTag("Player"))
+        {
+            HUDManager.Instancia.MostrarDano();
         }
 
         RuntimeManager.PlayOneShot(damageSound, transform.position);

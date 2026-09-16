@@ -12,6 +12,7 @@ public class RailCamera : MonoBehaviour
     [SerializeField] private float velOlhar = 2f;
     [SerializeField] private float direcaoY;
     [SerializeField] public bool rotacionarCamera = false;
+    [SerializeField] private PlayerFootsteps playerFootsteps;
 
     private bool gameOverChamado = false;
 
@@ -72,6 +73,7 @@ public class RailCamera : MonoBehaviour
         {
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
+            playerFootsteps.PlayFootstep();
         }
         if (Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f && rotacionarCamera)
         {
