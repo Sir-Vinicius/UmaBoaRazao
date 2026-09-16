@@ -10,6 +10,8 @@ public class PlayerAmmo : MonoBehaviour
 
     [SerializeField] private EventReference reloadSound;
     [SerializeField] private GameObject arma;
+    [SerializeField] private GameObject recarregandoUI;
+
     public bool recarregando = false;
     private float espera;
     void Start()
@@ -24,6 +26,7 @@ public class PlayerAmmo : MonoBehaviour
         {
             recarregando = false;
             var direcao = (new Vector3(arma.transform.localPosition.x, -0.38f, arma.transform.localPosition.z) - arma.transform.localPosition).normalized;
+            recarregandoUI.SetActive(false);
 
             if (Vector3.Distance(arma.transform.localPosition, new Vector3(arma.transform.localPosition.x, -0.38f, arma.transform.localPosition.z)) > 0.01f)
             {
@@ -34,6 +37,7 @@ public class PlayerAmmo : MonoBehaviour
         if (espera > 0f)
         {
             var direcao = (new Vector3(arma.transform.localPosition.x, -0.73f, arma.transform.localPosition.z) - arma.transform.localPosition).normalized;
+            recarregandoUI.SetActive(true);
 
             if (Vector3.Distance(arma.transform.localPosition, new Vector3(arma.transform.localPosition.x, -0.73f, arma.transform.localPosition.z)) > 0.01f)
             {

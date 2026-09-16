@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     {
         //Som do botão
         uiSound.PlayBack();
+        if (pauseUI != null) pauseUI.SetActive(false);
+        Time.timeScale = 1f;
         pauseUI.SetActive(false);
     }
 
@@ -54,6 +56,9 @@ public class UIManager : MonoBehaviour
     {
         uiSound.PlayForward();
         MusicManager.Instance.SetEstado(MusicState.Menu);
+
+        if (pauseUI != null) pauseUI.SetActive(false);
+        Time.timeScale = 1f;
         StartCoroutine(TransicaoDeCena("MainMenu"));
     }
 
