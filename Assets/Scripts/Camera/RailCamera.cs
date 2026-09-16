@@ -13,6 +13,7 @@ public class RailCamera : MonoBehaviour
     [SerializeField] private float velOlhar = 2f;
     [SerializeField] private float direcaoY;
     [SerializeField] public bool rotacionarCamera = false;
+    [SerializeField] private PlayerFootsteps playerFootsteps;
     [SerializeField] private float atrasoDoDialogo = 1.5f;
 
     private bool gameOverChamado = false;
@@ -103,6 +104,7 @@ public class RailCamera : MonoBehaviour
         {
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
+            playerFootsteps.PlayFootstep();
         }
 
         // Quando chegar no ponto (Node)
