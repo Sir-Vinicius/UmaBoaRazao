@@ -14,6 +14,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private GameObject meuEnemy;
     [SerializeField] private GameObject meuCamera;
     [SerializeField] private RailCamera railCamera;
+    [SerializeField] private AudioSource enemyGroanAudio;
     //[SerializeField] private GameObject wayPointSpaw;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +47,7 @@ public class SpawnerController : MonoBehaviour
                         SpawnEnemy(2, 5.5f, false, 1);
                         SpawnEnemy(3, 2f, true, 1);
                         SpawnEnemy(4, 1.6f, true, 2);
+                        TocarGemidoInimigo();
                         evento = true;
                         
                         
@@ -68,6 +70,7 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(6, 6.5f, true, 3);
                             SpawnEnemy(8, 16f, false, 3);
                             SpawnEnemy(9, 15f, false, 3);
+                            TocarGemidoInimigo();
                             evento = true;
                             horda = 1;
                             intervaloSpawn = 2f;
@@ -85,6 +88,7 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(9, 15f, false, 3);
                             SpawnEnemy(10, 12.5f, true, 3);
                             SpawnEnemy(11, 19.3f, true, 3);
+                            TocarGemidoInimigo();
                             horda = 0;
                             
                         }
@@ -107,6 +111,7 @@ public class SpawnerController : MonoBehaviour
                        SpawnEnemy(14, -21.1f, false, 1);
                        SpawnEnemy(15, -10.07f, false, 1);
                        SpawnEnemy(16, -24.62f, true, 1);
+                       TocarGemidoInimigo();
 
                        evento = true;
                        horda = 1;
@@ -123,6 +128,7 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(14, -21.1f, false, 1);
                             SpawnEnemy(15, -10.07f, false, 1);
                             SpawnEnemy(16, -24.62f, true, 1);
+                            TocarGemidoInimigo();
                             horda = 0;
                             
                         }
@@ -151,7 +157,8 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(19, 1.6f, true, 2);
                             SpawnEnemy(20, 9.9f, true, 1);
                             SpawnEnemy(21, 6.9f, true, 1);
-                            
+                            TocarGemidoInimigo();
+
                             horda = 1;
                             intervaloSpawn = 2f;
                             
@@ -164,6 +171,7 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(19, 1.6f, true, 2);
                             SpawnEnemy(20, 9.9f, true, 1);
                             SpawnEnemy(21, 6.9f, true, 1);
+                            TocarGemidoInimigo();
                             horda = 0;
                         }
                     }
@@ -198,7 +206,8 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(24, 19.3f, false, 1);
                             SpawnEnemy(25, 17.5f, false, 1);
                             SpawnEnemy(26, 23.7f, false, 1);
-                            
+                            TocarGemidoInimigo();
+
                             horda = 1;
                             intervaloSpawn = 2f;
                             
@@ -212,6 +221,7 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(24, 19.3f, false, 1);
                             SpawnEnemy(25, 17.5f, false, 1);
                             SpawnEnemy(26, 23.7f, false, 1);
+                            TocarGemidoInimigo();
 
                             horda = 2;
                             
@@ -227,6 +237,7 @@ public class SpawnerController : MonoBehaviour
                             SpawnEnemy(25, 17.5f, false, 1);
                             SpawnEnemy(28, 17.8f, false, 1);
                             SpawnEnemy(27, 20.5f, false, 1);
+                            TocarGemidoInimigo();
                             horda = 0;
                         }
 
@@ -269,5 +280,10 @@ public class SpawnerController : MonoBehaviour
             intervaloSpawn -= Time.deltaTime;
         }
     }
-    
+
+    private void TocarGemidoInimigo()
+    {
+        enemyGroanAudio.Play();
+    }
+
 }
