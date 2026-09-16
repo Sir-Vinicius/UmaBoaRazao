@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7670972591291816101}
   - component: {fileID: 2140410338015667803}
   - component: {fileID: -7457407520474249016}
+  - component: {fileID: 6157304515310072061}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -196,6 +197,18 @@ MonoBehaviour:
       Data3: 1891054012
       Data4: 445270481
     Path: event:/enemydeath_sfx
+--- !u!114 &6157304515310072061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543334891319101343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6f41c27ed884d47868d7b314a2d95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!1 &1185571780042967271
 GameObject:
   m_ObjectHideFlags: 0
