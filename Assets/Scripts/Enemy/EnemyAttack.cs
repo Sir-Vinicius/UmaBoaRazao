@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] private int dano = 1;
+    private int dano = 1;
     [SerializeField] private float intervaloAtaque;
 
     // sons
