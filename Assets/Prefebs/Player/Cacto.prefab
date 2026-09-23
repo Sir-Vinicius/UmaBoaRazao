@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 7185209556918846415}
   - component: {fileID: 3199508993415960095}
   - component: {fileID: 300418239041899066}
+  - component: {fileID: 3147665600064572567}
   - component: {fileID: 7915869799304751918}
   m_Layer: 0
   m_Name: Fruta
@@ -438,6 +439,25 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3147665600064572567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9185165047931093959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d93ae32487b7214c8154ff4b2828de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrutaController
+  cactusSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &7915869799304751918
 MonoBehaviour:
   m_ObjectHideFlags: 0

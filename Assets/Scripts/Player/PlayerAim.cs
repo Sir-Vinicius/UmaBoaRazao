@@ -86,6 +86,7 @@ public class PlayerAim : MonoBehaviour
                 SceneManager.LoadScene("VictoryCutScene");
 
             }
+           
         }
     }
 }

@@ -20,6 +20,6 @@ public class FrutaController : MonoBehaviour
     private void OnDestroy()
     {
         vidaPlayer.Curar(1);
-        RuntimeManager.PlayOneShot(cactusSound);
+
     }
 }
