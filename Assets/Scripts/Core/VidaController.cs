@@ -77,9 +77,16 @@ public class VidaController : MonoBehaviour
         if (morto) return;
         if (vidaAtual >= maxVida) return;
        
+        
+        
+        
         vidaAtual += cura;
-        
-        
+
+        if (gameObject.CompareTag("Player"))
+        {
+            HUDManager.Instancia.AtualizarVida(vidaAtual);
+        }
+
         Debug.Log($"{gameObject.name} foi curado em {cura}. Vida atual: {vidaAtual}/{maxVida}");
     }
 }

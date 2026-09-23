@@ -14,11 +14,13 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private GameObject meuEnemy;
     [SerializeField] private GameObject meuCamera;
     [SerializeField] private RailCamera railCamera;
+    [SerializeField] private GameObject baleia;
     //[SerializeField] private GameObject wayPointSpaw;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         railCamera = FindAnyObjectByType<RailCamera>();
+        baleia = GameObject.FindWithTag("Baleia");
         wayPointsCount = transform.childCount;
         wayPoints = new Vector3[wayPointsCount];
         for (int i = 0; i < wayPointsCount; i++)
@@ -233,7 +235,12 @@ public class SpawnerController : MonoBehaviour
                 }
                 break;
             case 8:
-                railCamera.vel = 5;
+                railCamera.vel = 1;
+                var srB = baleia.GetComponent<SpriteRenderer>();
+                var colB = baleia.GetComponent<BoxCollider>();
+
+                srB.enabled = true;
+                colB.enabled = true;
                 //railCamera
                 break;
                 // Add more cases as needed
