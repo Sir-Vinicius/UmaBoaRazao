@@ -32,6 +32,7 @@ public class PauseManager : MonoBehaviour
     {
         if (pauseUI != null) pauseUI.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.visible = true;
         jogoPausado = true;
     }
 
@@ -39,6 +40,7 @@ public class PauseManager : MonoBehaviour
     {
         if (pauseUI != null) pauseUI.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.visible = false;
         jogoPausado = false;
     }
 

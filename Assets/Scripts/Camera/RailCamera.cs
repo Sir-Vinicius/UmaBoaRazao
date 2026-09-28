@@ -24,6 +24,7 @@ public class RailCamera : MonoBehaviour
     private bool gameOverChamado = false;
 
     private int nodeAnterior = 0;
+    private CoverController cover;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +33,7 @@ public class RailCamera : MonoBehaviour
         nodeCount = transform.childCount;
         nodes = new Vector3[nodeCount];
         camera = GameObject.Find("Main Camera");
+        cover = FindAnyObjectByType<CoverController>();
 
         for (int i = 0; i < nodeCount; i++)
         {
@@ -110,16 +112,14 @@ public class RailCamera : MonoBehaviour
             camera.transform.position = posicaoAtual + direcao * vel * Time.deltaTime;
             camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlhar, velOlhar * Time.deltaTime);
             playerFootsteps.PlayFootstep();
+            cover.cheguei = false;
         }
 
         // Quando chegar no ponto (Node)
         if (Vector3.Distance(posicaoAtual, railAlvo) <= 0.1f)
         {
-            if (rotacionarCamera)
-            {
-                camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, direcaoOlharCerta, velOlhar * Time.deltaTime);
-            }
 
+            cover.cheguei = true;
             
         }
 
