@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        if (Time.time > tempoEspera)
+        if (Time.time > tempoEspera && vida.vidaAtual > 0)
         {
             if (indoParaAlvo)
             {
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (!indoParaAlvo && voltandoEnemy)
+        if (!indoParaAlvo && voltandoEnemy && vida.vidaAtual > 0)
         {
             VoltarPosicaoOriginal();
         }

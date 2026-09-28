@@ -125,6 +125,7 @@ public class UIManager : MonoBehaviour
         // Musica de vitoria
         MusicManager.Instance.SetEstado(MusicState.Victory);
         // Futura scene de vitoria. Pode ser só ui e não uma scene no futuro.
+        Cursor.visible = true;
         StartCoroutine(TransicaoDeCena("VictoryCutScene"));
     }
 

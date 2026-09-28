@@ -20,6 +20,7 @@ public class CoverController : MonoBehaviour
     [SerializeField] private EventReference outSound;
 
     [SerializeField] private float alvoPitch = 18f;
+    public bool cheguei;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -87,7 +88,7 @@ public class CoverController : MonoBehaviour
 
         bool segurando = Keyboard.current.spaceKey.isPressed;
 
-        if (segurando && coverPai.coversG[railCamera.nodesNumero] != null)
+        if (segurando && coverPai.coversG[railCamera.nodesNumero] != null && cheguei)
         {
             // Debug.Log("Player is taking cover!");
             if (!isInCover)

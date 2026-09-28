@@ -28,12 +28,12 @@ public class PlayerAim : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        Cursor.visible = false;
+        
 
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         crosshair.position = mousePosition;
