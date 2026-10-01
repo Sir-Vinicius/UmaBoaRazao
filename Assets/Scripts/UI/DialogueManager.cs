@@ -32,10 +32,19 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayMessage()
     {
+        Debug.Log("=== DisplayMessage entrou ===");
+        Debug.Log($"currentMessages: {currentMessages?.Length}");
+        Debug.Log($"currentActors: {currentActors?.Length}");
+        Debug.Log($"activeMessage: {activeMessage}");
+
         Message messageToDisplay = currentMessages[activeMessage];
+
+        Debug.Log($"Mensagem obtida. actorID: {messageToDisplay.actorID}");
+
         messageText.text = messageToDisplay.message;
 
         Actor actorToDisplay = currentActors[messageToDisplay.actorID];
+        Debug.Log($"Actor obtido: {actorToDisplay.name}");
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
 

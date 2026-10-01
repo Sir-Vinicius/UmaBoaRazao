@@ -10,6 +10,9 @@ public class DialogueTrigger : MonoBehaviour
 
     public void StartDialogue()
     {
+        Debug.Log("=== StartDialogue chamado ===");
+        Debug.Log($"Messages no Trigger: {messages?.Length}");
+        Debug.Log($"Actors no Trigger: {actors?.Length}");
         FindAnyObjectByType<DialogueManager>().OpenDialogue(messages, actors);
     }
 }
