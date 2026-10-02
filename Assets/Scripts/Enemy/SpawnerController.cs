@@ -235,7 +235,7 @@ public class SpawnerController : MonoBehaviour
                 }
                 break;
             case 8:
-                railCamera.vel = 1;
+                railCamera.vel = 4;
                 var srB = baleia.GetComponent<SpriteRenderer>();
                 var colB = baleia.GetComponent<BoxCollider>();
 
