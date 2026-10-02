@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private UISoundController uiSound;
 
+
+ 
     //Botão de resetar fase
     public void OnRestartPress()
     {
@@ -105,6 +108,11 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (SceneManager.GetActiveScene().name != "SampleScene")
+        {
+            Cursor.visible = true;
+        }
+
         if (continueButton != null)
         {
             //Verifica se o jogador tem save (node maior que 0)
