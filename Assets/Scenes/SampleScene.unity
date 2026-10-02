@@ -39585,6 +39585,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7630469720627657097, guid: 221790002781e10429c1b806ab5729a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 406677232}
+    - target: {fileID: 7630469720627657097, guid: 221790002781e10429c1b806ab5729a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMainMenuPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651149820266621661, guid: 221790002781e10429c1b806ab5729a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 406677232}
+    - target: {fileID: 7651149820266621661, guid: 221790002781e10429c1b806ab5729a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGameResumePress
+      objectReference: {fileID: 0}
     - target: {fileID: 7738380564749076244, guid: 221790002781e10429c1b806ab5729a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
