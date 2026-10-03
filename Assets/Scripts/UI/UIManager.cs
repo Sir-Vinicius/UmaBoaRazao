@@ -28,8 +28,8 @@ public class UIManager : MonoBehaviour
         //Som do botão
         uiSound.PlayBack();
         if (pauseUI != null) pauseUI.SetActive(false);
-        Time.timeScale = 1f;
-        pauseUI.SetActive(false);
+        var PauseManager = FindAnyObjectByType<PauseManager>();
+        if (PauseManager != null) PauseManager.RetomarJogo();
     }
 
     //Botão de Sair no Main Menu
