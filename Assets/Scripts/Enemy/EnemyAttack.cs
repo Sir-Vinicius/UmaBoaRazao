@@ -1,0 +1,66 @@
+using FMODUnity;
+using UnityEngine;
+
+public class EnemyAttack : MonoBehaviour
+{
+    private int dano = 1;
+    [SerializeField] private float intervaloAtaque;
+
+    // sons
+    [SerializeField] private EventReference enemyShootSound;
+    [SerializeField] private EventReference flybySound;
+
+    private float proximoAtaque;
+    private VidaController vidaPlayer;
+    private CoverController coverController;
+    private Enemy enemy;
+    public bool arrivedAtTarget = true;
+
+    void Start()
+    {
+        GameObject player = GameObject.Find("Player");
+        vidaPlayer = player.GetComponent<VidaController>();
+        coverController = player.GetComponent<CoverController>();
+
+        enemy = GetComponent<Enemy>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Vector3.Distance(transform.position, enemy.pontoAlvo) < 0.1f)
+        {
+            if (arrivedAtTarget)
+            {
+                enemy.meuAnimation.SetBool("Atirando", true);
+                intervaloAtaque = Random.Range(2f, 4f);
+                proximoAtaque = Time.time + intervaloAtaque;
+                arrivedAtTarget = false;
+            }
+
+            if (Time.time >= proximoAtaque)
+            {
+                Atacar();
+                arrivedAtTarget = true;
+                enemy.indoParaAlvo = false;
+            }
+        }
+    }
+
+    private void Atacar()
+    {
+        RuntimeManager.PlayOneShot(enemyShootSound, transform.position);
+
+        if (coverController.isInCover == false)
+        {
+            Debug.Log("Inimigo atacou!");
+            vidaPlayer.ReceberDano(dano);
+        }
+        else
+        {
+            Debug.Log("Bloqueado");
+            RuntimeManager.PlayOneShot(flybySound, transform.position);
+        }
+        enemy.meuAnimation.SetBool("Atirando", false);
+    }
+}
